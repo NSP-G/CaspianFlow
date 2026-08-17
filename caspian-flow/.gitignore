@@ -1,0 +1,19 @@
+# Dependencies (restored via pnpm install / cargo)
+node_modules/
+target/
+src-tauri/target/
+
+# Build output
+dist/
+dist-globcheck/
+
+# Logs
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# Temp verification artifacts
+*_globcheck.ts
+vite.globcheck.config.ts

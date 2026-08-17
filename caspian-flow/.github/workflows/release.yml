@@ -1,0 +1,116 @@
+# P33 · Cross-platform release pipeline (Windows / macOS / Linux)
+#
+# Triggered by a `v*` tag push or manual dispatch. One job per OS runner builds
+# that runner's native target — the supported Tauri cross-platform strategy
+# (avoids fragile cross-compilers). Each runner signs its artifact with the
+# platform-appropriate secrets, then tauri-action uploads the bundles to a
+# GitHub draft release.
+#
+# Prerequisites (one-time, human):
+#   1. Commit a 1024x1024 `app-icon.png` at the repo root. CI runs
+#      `pnpm tauri icon` to expand it into the full `src-tauri/icons/` set
+#      (icon.icns / icon.ico / 32x32.png / ...). The tauri.conf.json `bundle.icon`
+#      array references that generated set.
+#   2. Generate the updater keypair once:
+#        pnpm tauri signer generate -w ~/.tauri/caspian.key
+#      put the PUBLIC key (prints to stdout) into tauri.conf.json
+#      `plugins.updater.pubkey`, and store the PRIVATE key as the
+#      `TAURI_SIGNING_PRIVATE_KEY` repo secret (PEM, no passphrase or set
+#      `TAURI_SIGNING_PRIVATE_KEY_PASSWORD` too).
+#
+# Layout note: the app lives at the repository ROOT (not a monorepo
+# subdirectory), so there is no `caspian-flow/` working-directory prefix and
+# `projectPath` is `.`.
+
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: ubuntu-22.04
+            args: --features tauri
+          - platform: windows-latest
+            args: --features tauri
+          - platform: macos-latest
+            # Universal binary covers both Apple Silicon and Intel Macs.
+            args: --features tauri --target universal-apple-darwin
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - uses: actions/checkout@v4
+
+      # --- Linux only: the webview system libraries Tauri v2 needs to build ---
+      - name: Install Linux build dependencies
+        if: matrix.platform == 'ubuntu-22.04'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libwebkit2gtk-4.1-dev \
+            libgtk-3-dev \
+            librsvg2-dev \
+            libayatana-appindicator3-dev \
+            librust-pipewire-0.3-dev
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Rust cache
+        uses: swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+
+      # Expand the committed app-icon.png into the full platform icon set.
+      - name: Generate app icons
+        run: pnpm tauri icon
+
+      - name: Install frontend dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build and release Tauri app
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Updater artifact signing (all platforms)
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+          # Windows Authenticode
+          TAURI_WINDOWS_CERTIFICATE: ${{ secrets.TAURI_WINDOWS_CERTIFICATE }}
+          TAURI_WINDOWS_CERTIFICATE_PASSWORD: ${{ secrets.TAURI_WINDOWS_CERTIFICATE_PASSWORD }}
+          # macOS code signing + notarization
+          APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
+          APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
+          APPLE_SIGNING_IDENTITY: ${{ secrets.APPLE_SIGNING_IDENTITY }}
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+        with:
+          projectPath: .
+          tagName: ${{ github.ref_name }}
+          releaseName: CaspianFlow ${{ github.ref_name }}
+          releaseBody: "See the assets below."
+          releaseDraft: true
+          prerelease: false
+          args: ${{ matrix.args }}

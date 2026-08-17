@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+/*
+ * CaspianFlow UI design tokens — encoded from P25 §二 hard constraints.
+ *   - radius: 4px (reject 8px+ "AI default")
+ *   - zero box-shadow / gradient / backdrop-blur (flat, no lift)
+ *   - neutral gray + single cold gray-blue accent (#4A6B8A)
+ *   - Lucide SVG icons only (no emoji)
+ *   - Alibaba PuHuiTi 3.0 (UI) / Geist Mono (code) — see fallback stacks
+ */
+
+@theme {
+  /* Single radius. Every rounded-* utility resolves to this unless overridden. */
+  --radius: 4px;
+  --radius-sm: 2px;
+  --radius-lg: 4px;
+  --radius-xl: 4px;
+
+  /* Fonts. Alibaba PuHuiTi 3.0 is not bundled (licensing); the stack falls
+   * back to Noto Sans SC / system-ui. Geist Mono is installed via @fontsource. */
+  --font-sans: "Alibaba PuHuiTi 3.0", "Noto Sans SC", system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo,
+    Consolas, "Liberation Mono", monospace;
+
+  /* Accent — cold gray-blue. Overridable per-mode below. */
+  --color-accent: #4a6b8a;
+  --color-accent-foreground: #f5f7fa;
+
+  /* Neutral ramp (used by border/muted tokens). */
+  --color-neutral-50: #f7f8fa;
+  --color-neutral-100: #eef1f4;
+  --color-neutral-200: #e2e6eb;
+  --color-neutral-300: #cdd3da;
+  --color-neutral-400: #9aa4b0;
+  --color-neutral-500: #6b7480;
+  --color-neutral-600: #4d5560;
+  --color-neutral-700: #353b43;
+  --color-neutral-800: #23282e;
+  --color-neutral-900: #16191d;
+  --color-neutral-950: #0e1013;
+}
+
+/* Map semantic colors to CSS variables so the dark/light toggle is a single
+ * class flip on <html>. Values defined in :root (light) and .dark below. */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  /* Danger — restrained brick red (P26 删除操作). Kept desaturated to sit
+   * inside the flat, single-accent system without an "alarm" gradient feel. */
+  --color-danger: var(--danger);
+  --color-danger-foreground: var(--danger-foreground);
+  /* Success — desaturated green for run "已完成" (P28 运行态). */
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #16191d;
+  --muted: #f2f4f7;
+  --muted-foreground: #4d5560;
+  --border: #e2e6eb;
+  --card: #ffffff;
+  --card-foreground: #16191d;
+  --input: #e2e6eb;
+  --ring: #4a6b8a;
+  --danger: #b4453a;
+  --danger-foreground: #ffffff;
+  --success: #2f8f5b;
+  --success-foreground: #ffffff;
+  color-scheme: light;
+}
+
+.dark {
+  --background: #14171a;
+  --foreground: #e6e9ed;
+  --muted: #1e2227;
+  --muted-foreground: #9aa4b0;
+  --border: #2a2f36;
+  --card: #181c20;
+  --card-foreground: #e6e9ed;
+  --input: #2a2f36;
+  --ring: #4a6b8a;
+  --danger: #cf6a5d;
+  --danger-foreground: #14171a;
+  --success: #4ca47a;
+  --success-foreground: #14171a;
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+    /* Hard constraint: no card lift via shadow. */
+    box-shadow: none !important;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.5;
+    /* Native-feeling, dense desktop UI. */
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    /* No text selection shimmer; local-first utility feel. */
+    user-select: none;
+  }
+
+  /* Re-enable selection only inside editable / readable text regions. */
+  input,
+  textarea,
+  [contenteditable="true"],
+  .selectable {
+    user-select: text;
+  }
+}
+
+/* React Flow — flatten into the CaspianFlow token system (P27). The global
+ * `box-shadow: none` already strips lift; these align colors + radius. */
+.react-flow__controls {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.react-flow__controls-button {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  color: var(--foreground);
+}
+.react-flow__controls-button:hover {
+  background: var(--muted);
+}
+.react-flow__controls-button svg {
+  fill: var(--foreground);
+}
+.react-flow__edge-path {
+  stroke: var(--muted-foreground);
+  stroke-width: 1.5;
+}
+.react-flow__handle {
+  background: var(--accent);
+  border: none;
+  width: 8px;
+  height: 8px;
+}
+.react-flow__attribution {
+  display: none;
+}
+
