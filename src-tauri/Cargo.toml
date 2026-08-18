@@ -1,70 +1,14 @@
 [package]
 name = "caspian-flow"
 version = "0.1.0"
-edition = "2021"
-description = "Local-first AI agent runtime"
-license = "MIT"
-
-[lib]
-name = "caspian_flow"
-path = "src/lib.rs"
-
-[[bin]]
-name = "caspian-flow"
-path = "src/main.rs"
-
-[dependencies]
-# Serialization
-serde = { version = "1", features = ["derive"] }
-serde_yaml = "0.9"
-serde_json = "1"
-
-# Per-skill disposable sandbox directories (P32 安全沙箱)
-tempfile = "3"
-
-# Deterministic hashing (P20 cache keys — must be stable across processes/runs,
-# so SipHash-backed std::DefaultHasher is explicitly NOT used).
-sha2 = "0.10"
-
-# Async runtime
-tokio = { version = "1", features = ["full"] }
-
-# Logging
-tracing = "0.1"
-tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
-
-# Error handling
-thiserror = "2"
-anyhow = "1"
-
-# File watching (hot reload)
-notify = "7"
-notify-debouncer-mini = "0.5"
-
-# Secure key storage (OS keychain)
-keyring = { version = "3", features = ["sync-secret-service"] }
-
-# Path management
-dirs = "5"
-
-# Concurrency
-parking_lot = "0.12"
-arc-swap = "1"
-
-# Local embedding models (ONNX Runtime)
-fastembed = "4"
-
-# Async trait support
-async-trait = "0.1"
-
-# Misc
-once_cell = "1"
-regex = "1"
-
-# Optional global allocator (P35). Enable with `--features jemalloc`. Off by
-# default: the Rust core's heap footprint is sub-100 KB (see `memory`), and the
-# process budget is webview-dominated, so the system allocator suffices for now.
-tikv-jemallocator = { version = "0.6", optional = true }
+edition = "2024"
+authors = ["CaspianFlow Team"]
+license = "MIT OR Apache-2.0"
+description = "A local-first Agent platform with dignity and sovereignty"
+repository = "https://github.com/your-org/CaspianFlow"
+homepage = "https://caspianflow.dev"
+documentation = "https://caspianflow.dev/docs"
+readme = "README.md"
 
 # DAG topology (topological sort + cycle detection) — pure Rust, no native deps
 petgraph = "0.6"
@@ -111,7 +55,6 @@ default = []
 # Off by default so headless `cargo test --lib` / `cargo build` stay free of
 # the webview system libs.
 tauri = ["dep:tauri", "dep:tauri-build", "dep:tauri-plugin-updater"]
-
 # Optional jemalloc global allocator (P35). Helps with long-running heap
 # fragmentation once the embedded model's tensors / large session logs grow.
 # Off by default — the system allocator is adequate for the current profile.
@@ -121,3 +64,16 @@ jemalloc = ["dep:tikv-jemallocator"]
 pretty_assertions = "1"
 rusqlite = { version = "0.32", features = ["bundled"] }
 tokio = { version = "1", features = ["full"] }
+
+# ============================================================
+# Android-specific: vendored OpenSSL
+# ============================================================
+# On Android, openssl-sys tries to use the system NDK's OpenSSL headers
+# but the path detection fails (it looks at /usr/include instead of sysroot).
+# Enabling "vendored" forces it to compile OpenSSL from source during build,
+# eliminating the system dependency entirely.
+# 
+# This only applies when targeting Android — desktop builds (Linux/macOS/Windows)
+# are unaffected and continue to use system OpenSSL or rustls as configured.
+[target.'cfg(target_os = "android")'.dependencies]
+openssl = { version = "0.10", features = ["vendored"] }
