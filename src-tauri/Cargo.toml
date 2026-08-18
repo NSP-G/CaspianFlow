@@ -11,46 +11,44 @@ documentation = "https://caspianflow.dev/docs"
 readme = "README.md"
 
 [dependencies]
-# DAG topology (topological sort + cycle detection) — pure Rust, no native deps
+# DAG topology
 petgraph = "0.6"
 
-# Local SQLite session store (P21). `bundled` compiles the SQLite C library
-# statically (no system libsqlite3). FTS5 is enabled by default in the bundled
-# build (libsqlite3-sys sets -DSQLITE_ENABLE_FTS5 unconditionally), so no extra
-# feature is needed for the full-text virtual table used by `search_messages`.
+# SQLite
 rusqlite = { version = "0.32", features = ["bundled"] }
 
-# UUID v4 primary keys for sessions / workflow_runs / agent_calls (P21).
+# UUID
 uuid = { version = "1", features = ["v4"] }
 
-# Date handling for backup filename rotation (P21). Default features trimmed
-# to keep the dependency surface small.
+# Date handling
 chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }
 
-# HTTP client for LLM provider calls + health probes (P24).
-# Uses rustls-tls to avoid system OpenSSL dependency — critical for Android
-# cross-compilation (no Android OpenSSL dev files available in CI).
+# HTTP client (rustls to avoid OpenSSL on Android)
 reqwest = { version = "0.12", default-features = false, features = [
     "json",
     "rustls-tls",
     "stream",
 ] }
 
-# ⬇️ 新增：j emalloc 可选依赖 ⬇️
-# Optional jemalloc global allocator (P35). Helps with long-running heap
-# fragmentation once the embedded model's tensors / large session logs grow.
-# Only compiled when the `jemalloc` feature is enabled.
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+serde_yaml = "0.9"
+
+# Async runtime + async-trait for dyn-compatible async traits
+tokio = { version = "1", features = ["full"] }
+async-trait = "0.1"
+
+# Path / file / system
+dirs = "6.0"
+notify = "7.0"
+parking_lot = "0.12"
+
+# Optional jemalloc allocator
 tikv-jemallocator = { version = "0.6", optional = true }
 
-# Tauri v2 desktop runtime (P25). Optional + behind the `tauri` feature so the
-# default lib/test build does not pull the webview system libraries (webkit2gtk
-# etc.) — those are absent in headless CI/sandbox. Build the GUI with
-# `cargo build --features tauri` / `cargo tauri build`.
+# Tauri
 tauri = { version = "2", optional = true }
-
-# Auto-updater (P33). Optional + gated behind `tauri` so the headless
-# `cargo test --lib` build never compiles it (and never needs the webview libs).
-# The release pipeline builds with `--features tauri`, enabling it.
 tauri-plugin-updater = { version = "2", optional = true, default-features = false, features = ["rustls-tls"] }
 
 [build-dependencies]
@@ -58,29 +56,12 @@ tauri-build = { version = "2", optional = true }
 
 [features]
 default = []
-# Enables the Tauri GUI runtime (window + IPC) + the auto-updater plugin.
-# Off by default so headless `cargo test --lib` / `cargo build` stay free of
-# the webview system libs.
 tauri = ["dep:tauri", "dep:tauri-build", "dep:tauri-plugin-updater"]
-# Optional jemalloc global allocator (P35). Helps with long-running heap
-# fragmentation once the embedded model's tensors / large session logs grow.
-# Off by default — the system allocator is adequate for the current profile.
 jemalloc = ["dep:tikv-jemallocator"]
 
 [dev-dependencies]
 pretty_assertions = "1"
 rusqlite = { version = "0.32", features = ["bundled"] }
-tokio = { version = "1", features = ["full"] }
 
-# ============================================================
-# Android-specific: vendored OpenSSL
-# ============================================================
-# On Android, openssl-sys tries to use the system NDK's OpenSSL headers
-# but the path detection fails (it looks at /usr/include instead of sysroot).
-# Enabling "vendored" forces it to compile OpenSSL from source during build,
-# eliminating the system dependency entirely.
-#
-# This only applies when targeting Android — desktop builds (Linux/macOS/Windows)
-# are unaffected and continue to use system OpenSSL or rustls as configured.
 [target.'cfg(target_os = "android")'.dependencies]
 openssl = { version = "0.10", features = ["vendored"] }
