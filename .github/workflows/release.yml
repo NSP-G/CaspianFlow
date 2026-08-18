@@ -103,7 +103,6 @@ jobs:
           echo "OPENSSL_DIR=$ANDROID_HOME/ndk/26.1.10909125/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr" >> $GITHUB_ENV
           echo "PKG_CONFIG_PATH=$ANDROID_HOME/ndk/26.1.10909125/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/pkgconfig" >> $GITHUB_ENV
           echo "PKG_CONFIG_ALLOW_CROSS=1" >> $GITHUB_ENV
-          echo "OPENSSL_NO_VENDOR=1" >> $GITHUB_ENV
 
       - name: Install dependencies
         run: npm install
@@ -113,3 +112,6 @@ jobs:
 
       - name: Build APK
         run: npm run tauri android build -- --apk
+        env:
+          OPENSSL_NO_VENDOR: 0
+          PKG_CONFIG_ALLOW_CROSS: 1
