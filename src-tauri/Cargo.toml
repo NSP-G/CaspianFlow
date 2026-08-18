@@ -10,6 +10,7 @@ homepage = "https://caspianflow.dev"
 documentation = "https://caspianflow.dev/docs"
 readme = "README.md"
 
+[dependencies]
 # DAG topology (topological sort + cycle detection) — pure Rust, no native deps
 petgraph = "0.6"
 
@@ -34,6 +35,12 @@ reqwest = { version = "0.12", default-features = false, features = [
     "rustls-tls",
     "stream",
 ] }
+
+# ⬇️ 新增：j emalloc 可选依赖 ⬇️
+# Optional jemalloc global allocator (P35). Helps with long-running heap
+# fragmentation once the embedded model's tensors / large session logs grow.
+# Only compiled when the `jemalloc` feature is enabled.
+tikv-jemallocator = { version = "0.6", optional = true }
 
 # Tauri v2 desktop runtime (P25). Optional + behind the `tauri` feature so the
 # default lib/test build does not pull the webview system libraries (webkit2gtk
@@ -72,7 +79,7 @@ tokio = { version = "1", features = ["full"] }
 # but the path detection fails (it looks at /usr/include instead of sysroot).
 # Enabling "vendored" forces it to compile OpenSSL from source during build,
 # eliminating the system dependency entirely.
-# 
+#
 # This only applies when targeting Android — desktop builds (Linux/macOS/Windows)
 # are unaffected and continue to use system OpenSSL or rustls as configured.
 [target.'cfg(target_os = "android")'.dependencies]
