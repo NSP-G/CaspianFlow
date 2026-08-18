@@ -1,0 +1,14 @@
+# Tarpaulin coverage config (P40).
+#
+# Run with:
+#   cargo install cargo-tarpaulin   # one-time
+#   cargo tarpaulin --config tarpaulin.toml
+#
+# Coverage target: >= 80% (P40 gate). Default features only — the `tauri` and
+# `jemalloc` features are excluded because they require the webview system
+# libraries / a heavy C build that CI's default `cargo test --lib` does not use.
+
+[tool.tarpaulin]
+timeout = 300
+out = ["Stdout", "Html"]
+exclude-files = ["*tests*", "*/benches/*", "src-tauri/src/bin/*"]

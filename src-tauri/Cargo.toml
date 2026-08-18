@@ -1,0 +1,123 @@
+[package]
+name = "caspian-flow"
+version = "0.1.0"
+edition = "2021"
+description = "Local-first AI agent runtime"
+license = "MIT"
+
+[lib]
+name = "caspian_flow"
+path = "src/lib.rs"
+
+[[bin]]
+name = "caspian-flow"
+path = "src/main.rs"
+
+[dependencies]
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_yaml = "0.9"
+serde_json = "1"
+
+# Per-skill disposable sandbox directories (P32 安全沙箱)
+tempfile = "3"
+
+# Deterministic hashing (P20 cache keys — must be stable across processes/runs,
+# so SipHash-backed std::DefaultHasher is explicitly NOT used).
+sha2 = "0.10"
+
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+
+# Error handling
+thiserror = "2"
+anyhow = "1"
+
+# File watching (hot reload)
+notify = "7"
+notify-debouncer-mini = "0.5"
+
+# Secure key storage (OS keychain)
+keyring = { version = "3", features = ["sync-secret-service"] }
+
+# Path management
+dirs = "5"
+
+# Concurrency
+parking_lot = "0.12"
+arc-swap = "1"
+
+# Local embedding models (ONNX Runtime)
+fastembed = "4"
+
+# Async trait support
+async-trait = "0.1"
+
+# Misc
+once_cell = "1"
+regex = "1"
+
+# Optional global allocator (P35). Enable with `--features jemalloc`. Off by
+# default: the Rust core's heap footprint is sub-100 KB (see `memory`), and the
+# process budget is webview-dominated, so the system allocator suffices for now.
+tikv-jemallocator = { version = "0.6", optional = true }
+
+# DAG topology (topological sort + cycle detection) — pure Rust, no native deps
+petgraph = "0.6"
+
+# Local SQLite session store (P21). `bundled` compiles the SQLite C library
+# statically (no system libsqlite3). FTS5 is enabled by default in the bundled
+# build (libsqlite3-sys sets -DSQLITE_ENABLE_FTS5 unconditionally), so no extra
+# feature is needed for the full-text virtual table used by `search_messages`.
+rusqlite = { version = "0.32", features = ["bundled"] }
+
+# UUID v4 primary keys for sessions / workflow_runs / agent_calls (P21).
+uuid = { version = "1", features = ["v4"] }
+
+# Date handling for backup filename rotation (P21). Default features trimmed
+# to keep the dependency surface small.
+chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }
+
+# HTTP client for LLM provider calls + health probes (P24). Already present in
+# the lockfile as a `fastembed` transitive dependency, so promoting it to a
+# direct dependency adds no new compilation units. `rustls-tls` avoids a system
+# OpenSSL requirement (local-first / portable build).
+reqwest = { version = "0.12", default-features = false, features = [
+    "json",
+    "rustls-tls",
+] }
+
+# Tauri v2 desktop runtime (P25). Optional + behind the `tauri` feature so the
+# default lib/test build does not pull the webview system libraries (webkit2gtk
+# etc.) — those are absent in headless CI/sandbox. Build the GUI with
+# `cargo build --features tauri` / `cargo tauri build`.
+tauri = { version = "2", optional = true }
+
+# Auto-updater (P33). Optional + gated behind `tauri` so the headless
+# `cargo test --lib` build never compiles it (and never needs the webview libs).
+# The release pipeline builds with `--features tauri`, enabling it.
+tauri-plugin-updater = { version = "2", optional = true, default-features = false, features = ["rustls-tls"] }
+
+[build-dependencies]
+tauri-build = { version = "2", optional = true }
+
+[features]
+default = []
+# Enables the Tauri GUI runtime (window + IPC) + the auto-updater plugin.
+# Off by default so headless `cargo test --lib` / `cargo build` stay free of
+# the webview system libs.
+tauri = ["dep:tauri", "dep:tauri-build", "dep:tauri-plugin-updater"]
+
+# Optional jemalloc global allocator (P35). Helps with long-running heap
+# fragmentation once the embedded model's tensors / large session logs grow.
+# Off by default — the system allocator is adequate for the current profile.
+jemalloc = ["dep:tikv-jemallocator"]
+
+[dev-dependencies]
+pretty_assertions = "1"
+rusqlite = { version = "0.32", features = ["bundled"] }
+tokio = { version = "1", features = ["full"] }
