@@ -53,9 +53,7 @@
       }
     ],
     "createUpdaterArtifacts": true,
-    "linux": {
-      "category": "Utility"
-    },
+    "linux": {},
     "macOS": {
       "minimumSystemVersion": "10.15",
       "frameworks": [],
