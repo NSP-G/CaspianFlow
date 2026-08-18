@@ -31,20 +31,16 @@ jobs:
           node-version: 22
           cache: 'pnpm'
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
       - name: Setup Rust
         uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
           target: ${{ matrix.target }}
-
-      - name: Install pnpm
-        run: |
-          npm install -g pnpm
-          echo "$(npm prefix -g)/bin" >> $GITHUB_PATH
-          echo "export PATH=\"$(npm prefix -g)/bin:\$PATH\"" >> $GITHUB_ENV
-
-      - name: Verify pnpm
-        run: pnpm --version
 
       - name: Install dependencies
         run: pnpm install
@@ -69,6 +65,11 @@ jobs:
           node-version: 22
           cache: 'pnpm'
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
       - name: Setup Rust
         uses: actions-rs/toolchain@v1
         with:
@@ -89,15 +90,6 @@ jobs:
             platforms;android-34
             build-tools;34.0.0
             ndk;26.1.10909125
-
-      - name: Install pnpm
-        run: |
-          npm install -g pnpm
-          echo "$(npm prefix -g)/bin" >> $GITHUB_PATH
-          echo "export PATH=\"$(npm prefix -g)/bin:\$PATH\"" >> $GITHUB_ENV
-
-      - name: Verify pnpm
-        run: pnpm --version
 
       - name: Install dependencies
         run: pnpm install
