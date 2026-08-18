@@ -41,6 +41,10 @@ jobs:
         run: |
           npm install -g pnpm
           echo "$(npm prefix -g)/bin" >> $GITHUB_PATH
+          echo "export PATH=\"$(npm prefix -g)/bin:\$PATH\"" >> $GITHUB_ENV
+
+      - name: Verify pnpm
+        run: pnpm --version
 
       - name: Install dependencies
         run: pnpm install
@@ -90,6 +94,10 @@ jobs:
         run: |
           npm install -g pnpm
           echo "$(npm prefix -g)/bin" >> $GITHUB_PATH
+          echo "export PATH=\"$(npm prefix -g)/bin:\$PATH\"" >> $GITHUB_ENV
+
+      - name: Verify pnpm
+        run: pnpm --version
 
       - name: Install dependencies
         run: pnpm install
