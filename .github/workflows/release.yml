@@ -39,8 +39,8 @@ jobs:
 
       - name: Install pnpm
         run: |
-          corepack enable
-          corepack prepare pnpm@latest --activate
+          npm install -g pnpm
+          echo "$(npm prefix -g)/bin" >> $GITHUB_PATH
 
       - name: Install dependencies
         run: pnpm install
@@ -88,8 +88,8 @@ jobs:
 
       - name: Install pnpm
         run: |
-          corepack enable
-          corepack prepare pnpm@latest --activate
+          npm install -g pnpm
+          echo "$(npm prefix -g)/bin" >> $GITHUB_PATH
 
       - name: Install dependencies
         run: pnpm install
