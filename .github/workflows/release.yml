@@ -28,7 +28,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 22
           cache: 'pnpm'
 
       - name: Setup Rust
@@ -38,7 +38,9 @@ jobs:
           target: ${{ matrix.target }}
 
       - name: Install pnpm
-        run: npm install -g pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@latest --activate
 
       - name: Install dependencies
         run: pnpm install
@@ -60,7 +62,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 22
           cache: 'pnpm'
 
       - name: Setup Rust
@@ -85,7 +87,9 @@ jobs:
             ndk;26.1.10909125
 
       - name: Install pnpm
-        run: npm install -g pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@latest --activate
 
       - name: Install dependencies
         run: pnpm install
@@ -101,4 +105,3 @@ jobs:
         with:
           name: caspianflow.apk
           path: gen/android/app/build/outputs/apk/**/*.apk
-  
