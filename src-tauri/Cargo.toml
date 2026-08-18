@@ -82,13 +82,13 @@ uuid = { version = "1", features = ["v4"] }
 # to keep the dependency surface small.
 chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }
 
-# HTTP client for LLM provider calls + health probes (P24). Already present in
-# the lockfile as a `fastembed` transitive dependency, so promoting it to a
-# direct dependency adds no new compilation units. `rustls-tls` avoids a system
-# OpenSSL requirement (local-first / portable build).
+# HTTP client for LLM provider calls + health probes (P24).
+# Uses rustls-tls to avoid system OpenSSL dependency — critical for Android
+# cross-compilation (no Android OpenSSL dev files available in CI).
 reqwest = { version = "0.12", default-features = false, features = [
     "json",
     "rustls-tls",
+    "stream",
 ] }
 
 # Tauri v2 desktop runtime (P25). Optional + behind the `tauri` feature so the
