@@ -15,15 +15,16 @@ use std::time::Duration;
 use serde::Serialize;
 use serde_json::Value;
 use tauri::Emitter;
+use tauri::Manager;
 
-use caspian_flow::config::CaspianPaths;
-use caspian_flow::startup::StartupTimer;
-use caspian_flow::hot_reload::{DirWatcher, DirChangeCallback};
-use caspian_flow::skill::{ScanReport, Skill, SkillManager};
-use caspian_flow::theme::{ThemeManager, ThemeListResult};
-use caspian_flow::workflow::store::{RunRecord, RunStatus, RunStore};
-use caspian_flow::memory;
-use caspian_flow::workflow::{delete_workflow, list_entries, read_raw, save_draft, save_workflow, Workflow, WorkflowEngine, WorkflowListEntry, WorkflowRunResult};
+use crate::config::CaspianPaths;
+use crate::startup::StartupTimer;
+use crate::hot_reload::{DirWatcher, DirChangeCallback};
+use crate::skill::{ScanReport, Skill, SkillManager};
+use crate::theme::{ThemeManager, ThemeListResult};
+use crate::workflow::store::{RunRecord, RunStatus, RunStore};
+use crate::memory;
+use crate::workflow::{delete_workflow, list_entries, read_raw, save_draft, save_workflow as save_workflow_core, Workflow, WorkflowEngine, WorkflowListEntry, WorkflowRunResult};
 
 #[derive(Clone, Serialize)]
 struct SessionDto {
@@ -187,7 +188,7 @@ fn save_workflow(
 ) -> Result<u64, String> {
     let value: Value = serde_json::from_str(&doc).map_err(|e| e.to_string())?;
     let yaml = serde_yaml::to_string(&value).map_err(|e| e.to_string())?;
-    save_workflow(&caspian_paths(), &name, &yaml, expected_mtime).map_err(|e| e.to_string())
+    save_workflow_core(&caspian_paths(), &name, &yaml, expected_mtime).map_err(|e| e.to_string())
 }
 
 /// Write a draft (auto-save, debounced by the frontend). Isolated under
@@ -204,9 +205,6 @@ fn save_workflow_draft(name: String, doc: String) -> Result<(), String> {
 fn delete_workflow(name: String) -> Result<(), String> {
     delete_workflow(&caspian_paths(), &name).map_err(|e| e.to_string())
 }
-
-/// Build + run the Tauri application (called from `src/main.rs` under the
-/// `tauri` feature).
 
 // ---------------------------------------------------------------------------
 // Workflow execution IPC (P28): trigger P17 engine + surface run state
@@ -418,11 +416,11 @@ fn memory_report(state: tauri::State<'_, AppState>) -> Value {
 /// Export the live state into a `.caspian` bundle at `dest` (P36).
 #[tauri::command]
 fn export_bundle(state: tauri::State<'_, AppState>, dest: String) -> Result<String, String> {
-    let opts = caspian_flow::package::ExportOptions {
+    let opts = crate::package::ExportOptions {
         include_sessions: true,
         include_knowledge: true,
     };
-    caspian_flow::package::export_bundle(&state.paths, std::path::Path::new(&dest), &opts)
+    crate::package::export_bundle(&state.paths, std::path::Path::new(&dest), &opts)
         .map(|m| serde_json::to_string(&m).unwrap_or_default())
         .map_err(|e| e.to_string())
 }
@@ -436,11 +434,11 @@ fn import_bundle(
     policy: Option<String>,
 ) -> Result<String, String> {
     let policy = match policy.as_deref().unwrap_or("skip") {
-        "overwrite" => caspian_flow::package::ConflictPolicy::Overwrite,
-        "rename" => caspian_flow::package::ConflictPolicy::Rename,
-        _ => caspian_flow::package::ConflictPolicy::Skip,
+        "overwrite" => crate::package::ConflictPolicy::Overwrite,
+        "rename" => crate::package::ConflictPolicy::Rename,
+        _ => crate::package::ConflictPolicy::Skip,
     };
-    caspian_flow::package::import_bundle(std::path::Path::new(&src), &state.paths, policy)
+    crate::package::import_bundle(std::path::Path::new(&src), &state.paths, policy)
         .map(|r| serde_json::to_string(&r).unwrap_or_default())
         .map_err(|e| e.to_string())
 }
@@ -645,8 +643,8 @@ pub fn run_tauri() {
             memory_report,
             export_bundle,
             import_bundle,
-            caspian_flow::updater::check_for_update,
-            caspian_flow::updater::install_update
+            crate::updater::check_for_update,
+            crate::updater::install_update
         ])
         .run(tauri::generate_context!())
         .expect("error while running CaspianFlow GUI");
