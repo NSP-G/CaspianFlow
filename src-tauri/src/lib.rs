@@ -35,3 +35,11 @@ pub mod tauri_app;
 // Auto-updater IPC (P33) — same `tauri` feature gate as above.
 #[cfg(feature = "tauri")]
 pub mod updater;
+
+// Re-export core types for convenience
+pub use config::CaspianPaths;
+pub use startup::StartupTimer;
+pub use skill::{Skill, SkillManager};
+pub use workflow::{Workflow, WorkflowEngine};
+pub use session::SessionStore;
+pub use memory::MemoryBaseline;
