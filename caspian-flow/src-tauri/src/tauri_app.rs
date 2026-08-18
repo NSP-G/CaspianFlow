@@ -145,8 +145,8 @@ struct WorkflowListEntryDto {
 }
 
 #[tauri::command]
-fn list_workflows() -> Vec<WorkflowListEntryDto> {
-    list_entries(&caspian_paths())
+fn list_workflows(state: tauri::State<'_, AppState>) -> Vec<WorkflowListEntryDto> {
+    list_entries(&state.paths)
         .unwrap_or_default()
         .into_iter()
         .map(|e: WorkflowListEntry| WorkflowListEntryDto {
@@ -169,8 +169,8 @@ struct WorkflowFileDto {
 }
 
 #[tauri::command]
-fn load_workflow(name: String) -> Result<WorkflowFileDto, String> {
-    let (yaml, modified) = read_raw(&caspian_paths(), &name).map_err(|e| e.to_string())?;
+fn load_workflow(state: tauri::State<'_, AppState>, name: String) -> Result<WorkflowFileDto, String> {
+    let (yaml, modified) = read_raw(&state.paths, &name).map_err(|e| e.to_string())?;
     let value: Value = serde_yaml::from_str(&yaml).map_err(|e| e.to_string())?;
     let doc = serde_json::to_string(&value).map_err(|e| e.to_string())?;
     Ok(WorkflowFileDto { doc, modified })
@@ -181,28 +181,30 @@ fn load_workflow(name: String) -> Result<WorkflowFileDto, String> {
 /// `doc` is a JSON document; Rust converts it to P17 YAML and validates it.
 #[tauri::command]
 fn save_workflow(
+    state: tauri::State<'_, AppState>,
     name: String,
     doc: String,
     expected_mtime: Option<u64>,
 ) -> Result<u64, String> {
     let value: Value = serde_json::from_str(&doc).map_err(|e| e.to_string())?;
     let yaml = serde_yaml::to_string(&value).map_err(|e| e.to_string())?;
-    save_workflow(&caspian_paths(), &name, &yaml, expected_mtime).map_err(|e| e.to_string())
+    save_workflow(&state.paths, &name, &yaml, expected_mtime).map_err(|e| e.to_string())
 }
 
 /// Write a draft (auto-save, debounced by the frontend). Isolated under
 /// `.drafts/` — the engine never reads it (P27 验收 #3/#6).
 #[tauri::command]
-fn save_workflow_draft(name: String, doc: String) -> Result<(), String> {
+fn save_workflow_draft(state: tauri::State<'_, AppState>, name: String, doc: String) -> Result<(), String> {
     let value: Value = serde_json::from_str(&doc).map_err(|e| e.to_string())?;
     let yaml = serde_yaml::to_string(&value).map_err(|e| e.to_string())?;
-    save_draft(&caspian_paths(), &name, &yaml).map_err(|e| e.to_string())
+    save_draft(&state.paths, &name, &yaml).map_err(|e| e.to_string())
 }
 
 /// Delete a workflow definition and any stale draft.
 #[tauri::command]
-fn delete_workflow(name: String) -> Result<(), String> {
-    delete_workflow(&caspian_paths(), &name).map_err(|e| e.to_string())
+fn delete_workflow(state: tauri::State<'_, AppState>, name: String) -> Result<(), String> {
+    let paths = state.paths.clone();
+    delete_workflow(&paths, &name).map_err(|e| e.to_string())
 }
 
 /// Build + run the Tauri application (called from `src/main.rs` under the

@@ -72,7 +72,7 @@ pub struct BundleManifest {
 }
 
 /// Outcome of an import — every item lands in exactly one bucket.
-#[derive(Debug, Default)]
+#[derive(Debug, Default, serde::Serialize)]
 pub struct ImportReport {
     pub imported: Vec<String>,
     pub skipped: Vec<String>,

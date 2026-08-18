@@ -260,6 +260,7 @@ pub enum EmbeddingError {
 
 /// Workflow engine errors.
 #[derive(Debug, Error)]
+#[cfg_attr(feature = "tauri", derive(tauri::ipc::IntoInvokeError))]
 pub enum WorkflowError {
     #[error("workflow not found: `{name}`")]
     NotFound { name: String },

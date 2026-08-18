@@ -97,6 +97,7 @@ impl ThemeScanResult {
 
 /// Errors surfaced by explicit operations (apply / get_css) on a named theme.
 #[derive(Debug, thiserror::Error)]
+#[cfg_attr(feature = "tauri", derive(tauri::ipc::IntoInvokeError))]
 pub enum ThemeError {
     #[error("theme '{0}' not found")]
     NotFound(String),
