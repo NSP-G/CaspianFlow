@@ -1,120 +1,116 @@
+# P33 路 Cross-platform release pipeline (Windows / macOS / Linux)
+#
+# Triggered by a `v*` tag push or manual dispatch. One job per OS runner builds
+# that runner's native target 鈥?the supported Tauri cross-platform strategy
+# (avoids fragile cross-compilers). Each runner signs its artifact with the
+# platform-appropriate secrets, then tauri-action uploads the bundles to a
+# GitHub draft release.
+#
+# Prerequisites (one-time, human):
+#   1. Commit a 1024x1024 `app-icon.png` at the repo root. CI runs
+#      `pnpm tauri icon` to expand it into the full `src-tauri/icons/` set
+#      (icon.icns / icon.ico / 32x32.png / ...). The tauri.conf.json `bundle.icon`
+#      array references that generated set.
+#   2. Generate the updater keypair once:
+#        pnpm tauri signer generate -w ~/.tauri/caspian.key
+#      put the PUBLIC key (prints to stdout) into tauri.conf.json
+#      `plugins.updater.pubkey`, and store the PRIVATE key as the
+#      `TAURI_SIGNING_PRIVATE_KEY` repo secret (PEM, no passphrase or set
+#      `TAURI_SIGNING_PRIVATE_KEY_PASSWORD` too).
+#
+# Layout note: the app lives at the repository ROOT (not a monorepo
+# subdirectory), so there is no `caspian-flow/` working-directory prefix and
+# `projectPath` is `.`.
+
 name: Release
 
 on:
   push:
     tags:
-      - 'v*'
+      - "v*"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
-  build-desktop:
-    runs-on: ${{ matrix.os }}
+  build:
     strategy:
+      fail-fast: false
       matrix:
         include:
-          - os: ubuntu-latest
-            target: x86_64-unknown-linux-gnu
-            artifact_name: caspianflow.AppImage
-          - os: windows-latest
-            target: x86_64-pc-windows-msvc
-            artifact_name: caspianflow.msi
-          - os: macos-latest
-            target: aarch64-apple-darwin
-            artifact_name: caspianflow.dmg
-
+          - platform: ubuntu-22.04
+            args: --features tauri
+          - platform: windows-latest
+            args: --features tauri
+          - platform: macos-latest
+            # Universal binary covers both Apple Silicon and Intel Macs.
+            args: --features tauri --target universal-apple-darwin
+    runs-on: ${{ matrix.platform }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v6
-        with:
-          node-version: 24
-          cache: 'npm'
-
-      - name: Setup Rust
-        uses: dtolnay/rust-toolchain@stable
-        with:
-          toolchain: stable
-          targets: ${{ matrix.target }}
-
-      - name: Install Linux system dependencies
-        if: matrix.os == 'ubuntu-latest'
+      # Linux only: the webview system libraries Tauri v2 needs to build ---
+      - name: Install Linux build deps
+        if: matrix.platform == 'ubuntu-22.04'
         run: |
           sudo apt-get update
           sudo apt-get install -y \
-            libgtk-3-dev \
             libwebkit2gtk-4.1-dev \
-            libappindicator3-dev \
+            libgtk-3-dev \
             librsvg2-dev \
-            patchelf
+            libayatana-appindicator3-dev \
+            librust-pipewire-0.3-dev
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build Tauri app
-        run: npm run tauri build -- --features tauri -- --target ${{ matrix.target }}
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v7
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
         with:
-          name: ${{ matrix.artifact_name }}
-          path: src-tauri/target/${{ matrix.target }}/release/bundle/**/*
-
-  build-android:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v6
+          version: 9
 
       - name: Setup Node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v4
         with:
-          node-version: 24
-          cache: 'npm'
+          node-version: 20
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
 
-      - name: Setup Rust
+      - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
+
+      - name: Rust cache
+        uses: swatinem/rust-cache@v2
         with:
-          toolchain: stable
-          targets: aarch64-linux-android
+          workspaces: src-tauri
 
-      - name: Install system dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y pkg-config libssl-dev
+      # Expand the committed app-icon.png into the full platform icon set.
+      - name: Generate app icons
+        run: pnpm tauri icon
 
-      - name: Setup Java
-        uses: actions/setup-java@v5
-        with:
-          distribution: 'temurin'
-          java-version: '17'
+      - name: Install frontend dependencies
+        run: pnpm install --frozen-lockfile
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v4
-        with:
-          packages: >-
-            platform-tools
-            platforms;android-34
-            build-tools;34.0.0
-            ndk;26.3.11579264
-
-      - name: Set Android environment variables
-        run: |
-          echo "ANDROID_NDK_ROOT=$ANDROID_HOME/ndk/26.3.11579264" >> $GITHUB_ENV
-          echo "OPENSSL_DIR=$ANDROID_HOME/ndk/26.3.11579264/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr" >> $GITHUB_ENV
-          echo "PKG_CONFIG_PATH=$ANDROID_HOME/ndk/26.3.11579264/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/pkgconfig" >> $GITHUB_ENV
-          echo "PKG_CONFIG_ALLOW_CROSS=1" >> $GITHUB_ENV
-          echo "PATH=$ANDROID_HOME/ndk/26.3.11579264/toolchains/llvm/prebuilt/linux-x86_64/bin:$PATH" >> $GITHUB_ENV
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Initialize Tauri Android
-        run: npm run tauri android init
-
-      - name: Build APK
-        run: npm run tauri android build -- --apk
+      - name: Build and release Tauri app
+        uses: tauri-apps/tauri-action@v0
         env:
-          OPENSSL_NO_VENDOR: 0
-          PKG_CONFIG_ALLOW_CROSS: 1
-          RANLIB: aarch64-linux-android-ranlib
-          AR: aarch64-linux-android-ar
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Updater artifact signing (all platforms)
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+          # Windows Authenticode
+          TAURI_WINDOWS_CERTIFICATE: ${{ secrets.TAURI_WINDOWS_CERTIFICATE }}
+          TAURI_WINDOWS_CERTIFICATE_PASSWORD: ${{ secrets.TAURI_WINDOWS_CERTIFICATE_PASSWORD }}
+          # macOS code signing + notarization
+          APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
+          APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
+          APPLE_SIGNING_IDENTITY: ${{ secrets.APPLE_SIGNING_IDENTITY }}
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+        with:
+          projectPath: .
+          tagName: ${{ github.ref_name }}
+          releaseName: CaspianFlow ${{ github.ref_name }}
+          releaseBody: "See the assets below."
+          releaseDraft: true
+          prerelease: false
+          args: ${{ matrix.args }}
