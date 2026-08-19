@@ -1,0 +1,4299 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Users\Computer> cd "C:\Users\Computer\Downloads\caspianflow-v1-full-src\src-tauri"
+PS C:\Users\Computer\Downloads\caspianflow-v1-full-src\src-tauri> cargo clean
+     Removed 670 files, 162.2MiB total
+PS C:\Users\Computer\Downloads\caspianflow-v1-full-src\src-tauri> cargo check
+   Compiling proc-macro2 v1.0.107
+   Compiling unicode-ident v1.0.24
+   Compiling quote v1.0.47
+    Checking cfg-if v1.0.4
+    Checking windows-link v0.2.1
+    Checking windows-sys v0.61.2
+    Checking smallvec v1.15.2
+    Checking stable_deref_trait v1.2.1
+   Compiling shlex v2.0.1
+   Compiling find-msvc-tools v0.1.10
+    Checking pin-project-lite v0.2.17
+   Compiling parking_lot_core v0.9.12
+   Compiling syn v3.0.3
+   Compiling syn v2.0.119
+   Compiling cc v1.4.2
+    Checking bytes v1.12.1
+    Checking futures-core v0.3.33
+    Checking scopeguard v1.2.0
+    Checking itoa v1.0.18
+    Checking once_cell v1.21.4
+    Checking lock_api v0.4.14
+    Checking socket2 v0.6.5
+    Checking parking_lot v0.12.5
+   Compiling synstructure v0.13.2
+    Checking mio v1.2.2
+    Checking litemap v0.8.2
+    Checking writeable v0.6.3
+   Compiling ring v0.17.14
+   Compiling icu_properties_data v2.2.0
+   Compiling icu_normalizer_data v2.2.0
+    Checking utf8_iter v1.0.4
+   Compiling zerofrom-derive v0.1.7
+   Compiling yoke-derive v0.8.2
+   Compiling zerovec-derive v0.11.3
+    Checking zerofrom v0.1.8
+   Compiling displaydoc v0.2.7
+   Compiling tokio-macros v2.7.2
+    Checking yoke v0.8.3
+    Checking tokio v1.53.1
+    Checking zerovec v0.11.6
+    Checking zerotrie v0.2.4
+    Checking http v1.5.0
+    Checking percent-encoding v2.3.2
+    Checking zeroize v1.9.0
+   Compiling serde_core v1.0.229
+    Checking http-body v1.1.0
+    Checking tinystr v0.8.3
+    Checking potential_utf v0.1.5
+    Checking icu_locale_core v2.2.0
+    Checking icu_collections v2.2.0
+    Checking rustls-pki-types v1.15.1
+    Checking icu_provider v2.2.0
+    Checking getrandom v0.2.17
+   Compiling libc v0.2.189
+    Checking slab v0.4.12
+   Compiling version_check v0.9.5
+   Compiling httparse v1.10.1
+    Checking futures-task v0.3.33
+   Compiling zerocopy v0.8.56
+    Checking untrusted v0.9.0
+    Checking futures-util v0.3.33
+   Compiling ahash v0.8.12
+    Checking icu_normalizer v2.2.0
+    Checking icu_properties v2.2.0
+   Compiling windows_x86_64_msvc v0.52.6
+   Compiling rustls v0.23.43
+   Compiling serde v1.0.229
+    Checking try-lock v0.2.5
+    Checking tower-service v0.3.3
+    Checking idna_adapter v1.2.2
+    Checking want v0.3.1
+    Checking rustls-webpki v0.103.13
+    Checking form_urlencoded v1.2.2
+   Compiling serde_derive v1.0.229
+    Checking tracing-core v0.1.36
+    Checking futures-channel v0.3.33
+   Compiling pkg-config v0.3.33
+    Checking subtle v2.6.1
+   Compiling vcpkg v0.2.15
+   Compiling autocfg v1.5.1
+   Compiling zmij v1.0.23
+    Checking atomic-waker v1.1.2
+    Checking hyper v1.11.0
+   Compiling libsqlite3-sys v0.30.1
+   Compiling num-traits v0.2.19
+    Checking tracing v0.1.44
+    Checking idna v1.1.0
+    Checking sync_wrapper v1.0.2
+    Checking winapi-util v0.1.11
+    Checking hashbrown v0.17.1
+    Checking bitflags v2.13.1
+    Checking ipnet v2.12.1
+    Checking tower-layer v0.3.3
+    Checking base64 v0.22.1
+    Checking equivalent v1.0.2
+   Compiling serde_json v1.0.151
+   Compiling getrandom v0.4.3
+    Checking ryu v1.0.23
+    Checking hyper-util v0.1.20
+    Checking tokio-rustls v0.26.4
+    Checking indexmap v2.14.0
+    Checking tower v0.5.3
+    Checking same-file v1.0.6
+    Checking url v2.5.8
+    Checking windows-targets v0.52.6
+    Checking hashbrown v0.14.5
+    Checking webpki-roots v1.0.9
+    Checking instant v0.1.13
+    Checking option-ext v0.2.0
+    Checking futures-sink v0.3.33
+    Checking log v0.4.33
+    Checking memchr v2.8.3
+    Checking tokio-util v0.7.19
+    Checking dirs-sys v0.5.0
+    Checking hyper-rustls v0.27.9
+    Checking notify-types v1.0.1
+    Checking hashlink v0.9.1
+    Checking tower-http v0.6.11
+    Checking windows-sys v0.52.0
+    Checking walkdir v2.5.0
+    Checking serde_urlencoded v0.7.1
+    Checking http-body-util v0.1.4
+    Checking filetime v0.2.29
+    Checking fixedbitset v0.4.2
+    Checking fallible-streaming-iterator v0.1.9
+    Checking fallible-iterator v0.3.0
+   Compiling caspian-flow v0.1.0 (C:\Users\Computer\Downloads\caspianflow-v1-full-src\src-tauri)
+    Checking unsafe-libyaml v0.2.11
+    Checking notify v7.0.0
+    Checking petgraph v0.6.5
+    Checking serde_yaml v0.9.34+deprecated
+    Checking reqwest v0.12.28
+    Checking rusqlite v0.32.1
+    Checking uuid v1.24.0
+    Checking chrono v0.4.45
+    Checking dirs v6.0.0
+   Compiling async-trait v0.1.91
+error[E0432]: unresolved import `arc_swap`
+ --> src\config\watcher.rs:8:5
+  |
+8 | use arc_swap::ArcSwap;
+  |     ^^^^^^^^ use of unresolved module or unlinked crate `arc_swap`
+  |
+  = help: if you wanted to use a crate named `arc_swap`, use `cargo add arc_swap` to add it to your `Cargo.toml`
+
+error[E0432]: unresolved import `notify_debouncer_mini`
+ --> src\config\watcher.rs:9:5
+  |
+9 | use notify_debouncer_mini::new_debouncer;
+  |     ^^^^^^^^^^^^^^^^^^^^^ use of unresolved module or unlinked crate `notify_debouncer_mini`
+  |
+  = help: if you wanted to use a crate named `notify_debouncer_mini`, use `cargo add notify_debouncer_mini` to add it to your `Cargo.toml`
+
+error[E0432]: unresolved import `notify_debouncer_mini`
+  --> src\hot_reload.rs:20:5
+   |
+20 | use notify_debouncer_mini::new_debouncer;
+   |     ^^^^^^^^^^^^^^^^^^^^^ use of unresolved module or unlinked crate `notify_debouncer_mini`
+   |
+   = help: if you wanted to use a crate named `notify_debouncer_mini`, use `cargo add notify_debouncer_mini` to add it to your `Cargo.toml`
+
+error[E0432]: unresolved import `fastembed`
+ --> src\knowledge\embedder.rs:8:5
+  |
+8 | use fastembed::{EmbeddingModel, InitOptions, TextEmbedding};
+  |     ^^^^^^^^^ use of unresolved module or unlinked crate `fastembed`
+  |
+  = help: if you wanted to use a crate named `fastembed`, use `cargo add fastembed` to add it to your `Cargo.toml`
+
+error[E0432]: unresolved import `tracing_subscriber`
+ --> src\logging.rs:3:5
+  |
+3 | use tracing_subscriber::{fmt, EnvFilter};
+  |     ^^^^^^^^^^^^^^^^^^ use of unresolved module or unlinked crate `tracing_subscriber`
+  |
+  = help: if you wanted to use a crate named `tracing_subscriber`, use `cargo add tracing_subscriber` to add it to your `Cargo.toml`
+
+error[E0433]: cannot find module or crate `once_cell` in this scope
+ --> src\config\keystore.rs:5:5
+  |
+5 | use once_cell::sync::Lazy;
+  |     ^^^^^^^^^ use of unresolved module or unlinked crate `once_cell`
+  |
+  = help: if you wanted to use a crate named `once_cell`, use `cargo add once_cell` to add it to your `Cargo.toml`
+
+error[E0432]: unresolved import `tempfile`
+  --> src\skill\executor\sandbox.rs:37:5
+   |
+37 | use tempfile::TempDir;
+   |     ^^^^^^^^ use of unresolved module or unlinked crate `tempfile`
+   |
+   = help: if you wanted to use a crate named `tempfile`, use `cargo add tempfile` to add it to your `Cargo.toml`
+
+error[E0432]: unresolved import `regex`
+ --> src\config\keystore.rs:6:5
+  |
+6 | use regex::Regex;
+  |     ^^^^^ use of unresolved module or unlinked crate `regex`
+  |
+  = help: if you wanted to use a crate named `regex`, use `cargo add regex` to add it to your `Cargo.toml`
+
+error[E0432]: unresolved import `regex`
+  --> src\guardian\security.rs:15:5
+   |
+15 | use regex::Regex;
+   |     ^^^^^ use of unresolved module or unlinked crate `regex`
+   |
+   = help: if you wanted to use a crate named `regex`, use `cargo add regex` to add it to your `Cargo.toml`
+
+error[E0432]: unresolved import `sha2`
+  --> src\knowledge\store.rs:29:5
+   |
+29 | use sha2::{Digest, Sha256};
+   |     ^^^^ use of unresolved module or unlinked crate `sha2`
+   |
+   = help: if you wanted to use a crate named `sha2`, use `cargo add sha2` to add it to your `Cargo.toml`
+
+error[E0432]: unresolved import `sha2`
+  --> src\workflow\cache.rs:63:5
+   |
+63 | use sha2::{Digest, Sha256};
+   |     ^^^^ use of unresolved module or unlinked crate `sha2`
+   |
+   = help: if you wanted to use a crate named `sha2`, use `cargo add sha2` to add it to your `Cargo.toml`
+
+error[E0432]: unresolved import `sha2`
+  --> src\package.rs:29:5
+   |
+29 | use sha2::{Digest, Sha256};
+   |     ^^^^ use of unresolved module or unlinked crate `sha2`
+   |
+   = help: if you wanted to use a crate named `sha2`, use `cargo add sha2` to add it to your `Cargo.toml`
+
+error[E0432]: unresolved import `thiserror`
+ --> src\knowledge\error.rs:6:5
+  |
+6 | use thiserror::Error;
+  |     ^^^^^^^^^ use of unresolved module or unlinked crate `thiserror`
+  |
+  = help: if you wanted to use a crate named `thiserror`, use `cargo add thiserror` to add it to your `Cargo.toml`
+
+error[E0432]: unresolved import `thiserror`
+  --> src\router\model_router.rs:17:5
+   |
+17 | use thiserror::Error;
+   |     ^^^^^^^^^ use of unresolved module or unlinked crate `thiserror`
+   |
+   = help: if you wanted to use a crate named `thiserror`, use `cargo add thiserror` to add it to your `Cargo.toml`
+
+error[E0432]: unresolved import `thiserror`
+ --> src\session\error.rs:6:5
+  |
+6 | use thiserror::Error;
+  |     ^^^^^^^^^ use of unresolved module or unlinked crate `thiserror`
+  |
+  = help: if you wanted to use a crate named `thiserror`, use `cargo add thiserror` to add it to your `Cargo.toml`
+
+error[E0432]: unresolved import `thiserror`
+ --> src\types\error.rs:3:5
+  |
+3 | use thiserror::Error;
+  |     ^^^^^^^^^ use of unresolved module or unlinked crate `thiserror`
+  |
+  = help: if you wanted to use a crate named `thiserror`, use `cargo add thiserror` to add it to your `Cargo.toml`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+  --> src\config\keystore.rs:51:17
+   |
+51 |                 tracing::warn!(
+   |                 ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+  --> src\config\keystore.rs:65:9
+   |
+65 |         tracing::warn!(
+   |         ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+  --> src\config\keystore.rs:83:17
+   |
+83 |                 tracing::warn!(
+   |                 ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+  --> src\config\keystore.rs:92:13
+   |
+92 |             tracing::warn!(
+   |             ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\config\keystore.rs:113:5
+    |
+113 |     tracing::info!(model = model_id, "API key stored in OS keychain");
+    |     ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\config\keystore.rs:124:13
+    |
+124 |             tracing::info!(model = model_id, "API key deleted from OS keychain");
+    |             ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+  --> src\config\migration.rs:49:13
+   |
+49 |             tracing::info!(
+   |             ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\config\migration.rs:190:5
+    |
+190 |     tracing::info!(
+    |     ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\config\settings.rs:325:13
+    |
+325 |             tracing::warn!(
+    |             ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\config\settings.rs:360:17
+    |
+360 |                 tracing::warn!(
+    |                 ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\config\validation.rs:168:9
+    |
+168 |         tracing::warn!(
+    |         ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\config\validation.rs:174:9
+    |
+174 |         tracing::info!(
+    |         ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+  --> src\config\watcher.rs:67:37
+   |
+67 | ...                   tracing::debug!("config file change detected, reloading");
+   |                       ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+  --> src\config\watcher.rs:77:29
+   |
+77 | ...                   tracing::warn!(
+   |                       ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+  --> src\config\watcher.rs:88:13
+   |
+88 |             tracing::warn!(path = %path.display(), "config file does not exist, watcher disabled");
+   |             ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\config\watcher.rs:110:21
+    |
+110 |                     tracing::info!("config hot-reloaded successfully");
+    |                     ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\config\watcher.rs:117:21
+    |
+117 |                     tracing::warn!(
+    |                     ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\config\watcher.rs:123:21
+    |
+123 |                     tracing::warn!(
+    |                     ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\config\watcher.rs:130:17
+    |
+130 |                 tracing::warn!(
+    |                 ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\config\watcher.rs:154:17
+    |
+154 |                 tracing::info!("config manually reloaded");
+    |                 ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+  --> src\config\mod.rs:63:29
+   |
+63 | ...                   tracing::info!(
+   |                       ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+  --> src\config\mod.rs:71:25
+   |
+71 |                         tracing::warn!(
+   |                         ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+  --> src\config\mod.rs:79:25
+   |
+79 |                         tracing::warn!(error = %e, "config validation error, using defaults");
+   |                         ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+  --> src\config\mod.rs:85:17
+   |
+85 |                 tracing::warn!(error = %e, "config load failed, using defaults");
+   |                 ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+  --> src\config\mod.rs:93:9
+   |
+93 |         tracing::info!(
+   |         ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\guardian\mod.rs:301:13
+    |
+301 |             tracing::info!(
+    |             ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\guardian\mod.rs:318:17
+    |
+318 |                 tracing::info!(
+    |                 ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\guardian\mod.rs:330:17
+    |
+330 |                 tracing::warn!(
+    |                 ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\guardian\mod.rs:347:17
+    |
+347 |                 tracing::info!(
+    |                 ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\guardian\mod.rs:359:9
+    |
+359 |         tracing::warn!(
+    |         ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+  --> src\hot_reload.rs:47:13
+   |
+47 |             tracing::warn!(
+   |             ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+  --> src\hot_reload.rs:74:25
+   |
+74 |                         tracing::warn!(errors = ?errors, "dir watcher errors");
+   |                         ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+  --> src\knowledge\embedder.rs:91:9
+   |
+91 |         tracing::info!(
+   |         ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\knowledge\model_download.rs:159:9
+    |
+159 |         tracing::info!(attempt, max_retries = MAX_RETRIES, "attempting model init");
+    |         ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\knowledge\model_download.rs:164:21
+    |
+164 |                     tracing::info!(attempt, "model init succeeded after retry");
+    |                     ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\knowledge\model_download.rs:170:17
+    |
+170 |                 tracing::warn!(
+    |                 ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\knowledge\mod.rs:113:13
+    |
+113 |             tracing::info!("embedding model changed, unloading current model");
+    |             ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\knowledge\mod.rs:128:13
+    |
+128 |             tracing::info!(
+    |             ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\knowledge\mod.rs:188:9
+    |
+188 |         tracing::info!(model = %config.model, "preheating embedding model in background");
+    |         ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\knowledge\mod.rs:195:21
+    |
+195 |                     tracing::info!(
+    |                     ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\knowledge\mod.rs:204:21
+    |
+204 |                     tracing::warn!(error = %e, "embedding model preheat failed");
+    |                     ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\knowledge\mod.rs:271:13
+    |
+271 |             tracing::info!("unloading embedding model from memory");
+    |             ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\knowledge\mod.rs:290:17
+    |
+290 |                 tracing::info!(
+    |                 ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\knowledge\mod.rs:324:9
+    |
+324 |         tracing::info!(model = %model_name, "lazy-loading embedding model");
+    |         ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `thiserror` in this scope
+  --> src\theme\mod.rs:99:17
+   |
+99 | #[derive(Debug, thiserror::Error)]
+   |                 ^^^^^^^^^ use of unresolved module or unlinked crate `thiserror`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+  --> src\router\feedback.rs:76:9
+   |
+76 |         tracing::info!(
+   |         ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\router\feedback.rs:200:9
+    |
+200 |         tracing::info!(
+    |         ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\router\feedback.rs:211:13
+    |
+211 |             tracing::info!(
+    |             ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+  --> src\router\index.rs:75:17
+   |
+75 |                 tracing::warn!(
+   |                 ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+  --> src\router\index.rs:91:13
+   |
+91 |             tracing::warn!("no trigger phrases found in any skill — index is empty");
+   |             ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\router\index.rs:119:9
+    |
+119 |         tracing::info!(
+    |         ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\router\index.rs:238:9
+    |
+238 |         tracing::info!(skills = count, "router index rebuilt");
+    |         ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\router\index.rs:251:9
+    |
+251 |         tracing::info!(skills = count, "router index rebuilt from skills slice");
+    |         ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\router\model_router.rs:140:13
+    |
+140 |             tracing::warn!(model = %cfg.id, reason = "unhealthy", "skipping model in resolve");
+    |             ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\router\model_router.rs:147:17
+    |
+147 |                 tracing::warn!(model = %cfg.id, error = %e, "failed to resolve api key");
+    |                 ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\router\model_router.rs:154:9
+    |
+154 |         tracing::info!(model = %cfg.id, selection = reason, "resolved model");
+    |         ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\router\slot_filler.rs:827:13
+    |
+827 |             tracing::info!(
+    |             ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\router\slot_filler.rs:838:21
+    |
+838 |                     tracing::warn!(error = %e, attempt, "LLM call failed");
+    |                     ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\router\slot_filler.rs:850:21
+    |
+850 |                     tracing::warn!(error = %e, attempt, "JSON extraction failed");
+    |                     ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\router\slot_filler.rs:878:17
+    |
+878 |                 tracing::info!(
+    |                 ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\router\slot_filler.rs:893:13
+    |
+893 |             tracing::warn!(
+    |             ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\router\mod.rs:154:17
+    |
+154 |                 tracing::info!(
+    |                 ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\router\mod.rs:163:17
+    |
+163 |                 tracing::info!(
+    |                 ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\router\mod.rs:171:17
+    |
+171 |                 tracing::info!(
+    |                 ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\skill\builtin\mod.rs:232:9
+    |
+232 |         tracing::info!(
+    |         ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\skill\builtin\mod.rs:249:5
+    |
+249 |     tracing::info!(skill = name, "built-in skill installed");
+    |     ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+  --> src\skill\examples.rs:33:9
+   |
+33 |         tracing::debug!(
+   |         ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+  --> src\skill\examples.rs:45:13
+   |
+45 |             tracing::warn!(
+   |             ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+  --> src\skill\examples.rs:73:17
+   |
+73 |                 tracing::warn!(
+   |                 ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\skill\executor\mod.rs:234:9
+    |
+234 |         tracing::info!(
+    |         ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\skill\executor\mod.rs:283:17
+    |
+283 |                 tracing::warn!(
+    |                 ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\skill\executor\mod.rs:295:17
+    |
+295 |                 tracing::error!(
+    |                 ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\skill\executor\mod.rs:310:21
+    |
+310 |                     tracing::warn!(
+    |                     ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\skill\executor\mod.rs:323:17
+    |
+323 |                 tracing::info!(
+    |                 ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\skill\executor\mod.rs:355:9
+    |
+355 |         tracing::info!(
+    |         ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+  --> src\skill\registry.rs:49:13
+   |
+49 |             tracing::warn!(
+   |             ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\skill\registry.rs:346:13
+    |
+346 |             tracing::info!(skill = %name, "skill enabled");
+    |             ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\skill\registry.rs:360:13
+    |
+360 |             tracing::info!(skill = %name, "skill disabled");
+    |             ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\skill\scanner.rs:121:17
+    |
+121 |                 tracing::warn!(
+    |                 ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\skill\scanner.rs:133:13
+    |
+133 |             tracing::info!(
+    |             ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\skill\scanner.rs:140:9
+    |
+140 |         tracing::info!(
+    |         ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\skill\scanner.rs:165:21
+    |
+165 |                     tracing::error!(error = %e, "skill scan task panicked");
+    |                     ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\skill\scanner.rs:170:9
+    |
+170 |         tracing::info!(
+    |         ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\skill\scanner.rs:203:9
+    |
+203 |         tracing::warn!(dir = %dir.display(), "skill.yaml not found, skipping");
+    |         ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\skill\scanner.rs:216:13
+    |
+216 |             tracing::warn!(
+    |             ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\skill\scanner.rs:234:13
+    |
+234 |             tracing::warn!(
+    |             ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\skill\scanner.rs:253:9
+    |
+253 |         tracing::warn!(
+    |         ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\skill\scanner.rs:267:5
+    |
+267 |     tracing::info!(
+    |     ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\skill\skill_template.rs:147:5
+    |
+147 |     tracing::info!(
+    |     ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+  --> src\skill\validator.rs:40:9
+   |
+40 |         tracing::warn!(
+   |         ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+  --> src\skill\mod.rs:91:9
+   |
+91 |         tracing::info!(
+   |         ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+  --> src\startup.rs:43:9
+   |
+43 |         tracing::info!(
+   |         ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\self_healing.rs:121:21
+    |
+121 |                     tracing::warn!(db = %db.display(), "database integrity check failed");
+    |                     ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error[E0433]: cannot find module or crate `tracing` in this scope
+   --> src\self_healing.rs:354:13
+    |
+354 |             tracing::warn!(skill = %name, "network skill disabled (offline degradation)");
+    |             ^^^^^^^ use of unresolved module or unlinked crate `tracing`
+
+error: cannot find attribute `error` in this scope
+  --> src\knowledge\error.rs:11:7
+   |
+11 |     #[error("sqlite error: {0}")]
+   |       ^^^^^
+
+error: cannot find attribute `from` in this scope
+  --> src\knowledge\error.rs:12:14
+   |
+12 |     Sqlite(#[from] rusqlite::Error),
+   |              ^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\knowledge\error.rs:14:7
+   |
+14 |     #[error("io error: {0}")]
+   |       ^^^^^
+
+error: cannot find attribute `from` in this scope
+  --> src\knowledge\error.rs:15:10
+   |
+15 |     Io(#[from] std::io::Error),
+   |          ^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\knowledge\error.rs:17:7
+   |
+17 |     #[error("document not found: `{0}`")]
+   |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\knowledge\error.rs:20:7
+   |
+20 |     #[error("schema migration failed at version {version}: {reason}")]
+   |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\knowledge\error.rs:23:7
+   |
+23 |     #[error("database integrity check failed: {0}")]
+   |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\knowledge\error.rs:26:7
+   |
+26 |     #[error("LLM error during answer generation: {0}")]
+   |       ^^^^^
+
+error: cannot find attribute `from` in this scope
+  --> src\knowledge\error.rs:27:11
+   |
+27 |     Llm(#[from] crate::types::LlmError),
+   |           ^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\knowledge\error.rs:30:7
+   |
+30 |     #[error("LLM returned an empty answer")]
+   |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\knowledge\error.rs:34:7
+   |
+34 |     #[error("document content is empty")]
+   |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\knowledge\error.rs:38:7
+   |
+38 |     #[error("embedding error: {0}")]
+   |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\knowledge\error.rs:43:7
+   |
+43 |     #[error("model selection failed: {0}")]
+   |       ^^^^^
+
+error: cannot find attribute `from` in this scope
+  --> src\knowledge\error.rs:44:22
+   |
+44 |     ModelSelection(#[from] crate::router::ModelRouterError),
+   |                      ^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\theme\mod.rs:101:7
+    |
+101 |     #[error("theme '{0}' not found")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\theme\mod.rs:103:7
+    |
+103 |     #[error("theme '{0}' is invalid: {1}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\theme\mod.rs:105:7
+    |
+105 |     #[error("io error: {0}")]
+    |       ^^^^^
+
+error: cannot find attribute `from` in this scope
+   --> src\theme\mod.rs:106:10
+    |
+106 |     Io(#[from] std::io::Error),
+    |          ^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\theme\mod.rs:107:7
+    |
+107 |     #[error("yaml error: {0}")]
+    |       ^^^^^
+
+error: cannot find attribute `from` in this scope
+   --> src\theme\mod.rs:108:12
+    |
+108 |     Yaml(#[from] serde_yaml::Error),
+    |            ^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\theme\mod.rs:109:7
+    |
+109 |     #[error("serialization error: {0}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\router\model_router.rs:42:7
+   |
+42 |     #[error("no available model after exhausting priority + fallback chain")]
+   |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\router\model_router.rs:44:7
+   |
+44 |     #[error("selection strategy not supported in P24: {0:?}")]
+   |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\session\error.rs:11:7
+   |
+11 |     #[error("sqlite error: {0}")]
+   |       ^^^^^
+
+error: cannot find attribute `from` in this scope
+  --> src\session\error.rs:12:14
+   |
+12 |     Sqlite(#[from] rusqlite::Error),
+   |              ^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\session\error.rs:14:7
+   |
+14 |     #[error("io error: {0}")]
+   |       ^^^^^
+
+error: cannot find attribute `from` in this scope
+  --> src\session\error.rs:15:10
+   |
+15 |     Io(#[from] std::io::Error),
+   |          ^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\session\error.rs:17:7
+   |
+17 |     #[error("session not found: `{0}`")]
+   |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\session\error.rs:20:7
+   |
+20 |     #[error("schema migration failed at version {version}: {reason}")]
+   |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\session\error.rs:23:7
+   |
+23 |     #[error("database integrity check failed: {0}")]
+   |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\session\error.rs:26:7
+   |
+26 |     #[error("backup failed: {0}")]
+   |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\types\error.rs:11:7
+   |
+11 |     #[error("config error: {0}")]
+   |       ^^^^^
+
+error: cannot find attribute `from` in this scope
+  --> src\types\error.rs:12:14
+   |
+12 |     Config(#[from] ConfigError),
+   |              ^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\types\error.rs:14:7
+   |
+14 |     #[error("session error: {0}")]
+   |       ^^^^^
+
+error: cannot find attribute `from` in this scope
+  --> src\types\error.rs:15:15
+   |
+15 |     Session(#[from] SessionError),
+   |               ^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\types\error.rs:17:7
+   |
+17 |     #[error("knowledge base error: {0}")]
+   |       ^^^^^
+
+error: cannot find attribute `from` in this scope
+  --> src\types\error.rs:18:17
+   |
+18 |     Knowledge(#[from] KnowledgeError),
+   |                 ^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\types\error.rs:20:7
+   |
+20 |     #[error("io error: {0}")]
+   |       ^^^^^
+
+error: cannot find attribute `from` in this scope
+  --> src\types\error.rs:21:10
+   |
+21 |     Io(#[from] std::io::Error),
+   |          ^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\types\error.rs:23:7
+   |
+23 |     #[error("yaml error: {0}")]
+   |       ^^^^^
+
+error: cannot find attribute `from` in this scope
+  --> src\types\error.rs:24:12
+   |
+24 |     Yaml(#[from] serde_yaml::Error),
+   |            ^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\types\error.rs:26:7
+   |
+26 |     #[error("serialization error: {0}")]
+   |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\types\error.rs:29:7
+   |
+29 |     #[error("keyring error: {0}")]
+   |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\types\error.rs:32:7
+   |
+32 |     #[error("notify error: {0}")]
+   |       ^^^^^
+
+error: cannot find attribute `from` in this scope
+  --> src\types\error.rs:33:14
+   |
+33 |     Notify(#[from] notify::Error),
+   |              ^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\types\error.rs:35:7
+   |
+35 |     #[error("skill error: {0}")]
+   |       ^^^^^
+
+error: cannot find attribute `from` in this scope
+  --> src\types\error.rs:36:13
+   |
+36 |     Skill(#[from] SkillError),
+   |             ^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\types\error.rs:38:7
+   |
+38 |     #[error("embedding error: {0}")]
+   |       ^^^^^
+
+error: cannot find attribute `from` in this scope
+  --> src\types\error.rs:39:17
+   |
+39 |     Embedding(#[from] EmbeddingError),
+   |                 ^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\types\error.rs:41:7
+   |
+41 |     #[error("LLM error: {0}")]
+   |       ^^^^^
+
+error: cannot find attribute `from` in this scope
+  --> src\types\error.rs:42:11
+   |
+42 |     Llm(#[from] LlmError),
+   |           ^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\types\error.rs:44:7
+   |
+44 |     #[error("slot filling error: {0}")]
+   |       ^^^^^
+
+error: cannot find attribute `from` in this scope
+  --> src\types\error.rs:45:19
+   |
+45 |     SlotFilling(#[from] SlotFillingError),
+   |                   ^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\types\error.rs:47:7
+   |
+47 |     #[error("guardian error: {0}")]
+   |       ^^^^^
+
+error: cannot find attribute `from` in this scope
+  --> src\types\error.rs:48:16
+   |
+48 |     Guardian(#[from] GuardianError),
+   |                ^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\types\error.rs:50:7
+   |
+50 |     #[error("executor error: {0}")]
+   |       ^^^^^
+
+error: cannot find attribute `from` in this scope
+  --> src\types\error.rs:51:16
+   |
+51 |     Executor(#[from] ExecutorError),
+   |                ^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\types\error.rs:53:7
+   |
+53 |     #[error("workflow error: {0}")]
+   |       ^^^^^
+
+error: cannot find attribute `from` in this scope
+  --> src\types\error.rs:54:16
+   |
+54 |     Workflow(#[from] WorkflowError),
+   |                ^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\types\error.rs:60:7
+   |
+60 |     #[error("missing required field: `{field}` in {location}")]
+   |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\types\error.rs:63:7
+   |
+63 |     #[error("invalid value for `{field}`: {reason}")]
+   |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\types\error.rs:66:7
+   |
+66 |     #[error("config file not found: {path}")]
+   |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\types\error.rs:69:7
+   |
+69 |     #[error("config parse error: {0}")]
+   |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\types\error.rs:72:7
+   |
+72 |     #[error("schema version `{actual}` is not supported (expected `{expected}`)")]
+   |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\types\error.rs:75:7
+   |
+75 |     #[error("migration failed at version `{version}`: {reason}")]
+   |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\types\error.rs:78:7
+   |
+78 |     #[error("environment variable not set: `{var}`")]
+   |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\types\error.rs:81:7
+   |
+81 |     #[error("duplicate model id: `{id}`")]
+   |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\types\error.rs:88:7
+   |
+88 |     #[error("skill not found: `{name}`")]
+   |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\types\error.rs:91:7
+   |
+91 |     #[error("skill manifest parse error in {path}: {reason}")]
+   |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\types\error.rs:94:7
+   |
+94 |     #[error("skill validation error in {path}: {errors}")]
+   |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+  --> src\types\error.rs:97:7
+   |
+97 |     #[error("skill manifest not found: {path}")]
+   |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:100:7
+    |
+100 |     #[error("skill scan error: {0}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:107:7
+    |
+107 |     #[error("network error during LLM call: {0}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:110:7
+    |
+110 |     #[error("rate limited by LLM provider")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:113:7
+    |
+113 |     #[error("LLM returned invalid response: {0}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:116:7
+    |
+116 |     #[error("LLM call timed out")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:119:7
+    |
+119 |     #[error("LLM provider not configured")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:126:7
+    |
+126 |     #[error("JSON parse failed — could not extract valid JSON from LLM output: {raw_output}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:129:7
+    |
+129 |     #[error("schema validation failed with {error_count} error(s): {errors}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:136:7
+    |
+136 |     #[error("max retries ({max_retries}) exceeded — extraction failed after {attempts} attempts")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:144:7
+    |
+144 |     #[error("missing required fields: {fields}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:150:7
+    |
+150 |     #[error("LLM error during slot filling: {0}")]
+    |       ^^^^^
+
+error: cannot find attribute `from` in this scope
+   --> src\types\error.rs:151:16
+    |
+151 |     LlmError(#[from] LlmError),
+    |                ^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:153:7
+    |
+153 |     #[error("empty input schema — cannot fill slots without a schema")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:156:7
+    |
+156 |     #[error("unsupported schema keyword `{keyword}` — supported keywords: type, required, properties, minimum,...
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:163:7
+    |
+163 |     #[error("L1 format check failed — output is not valid JSON: {raw_output}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:166:7
+    |
+166 |     #[error("L2 schema validation failed with {error_count} error(s): {errors}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:173:7
+    |
+173 |     #[error("max retries ({max_retries}) exceeded — validation failed after {attempts} attempts, last errors: ...
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:181:7
+    |
+181 |     #[error("L4 security check blocked output — {violations:?}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:184:7
+    |
+184 |     #[error("output size {actual} exceeds limit {limit} bytes")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:187:7
+    |
+187 |     #[error("LLM error during guardian retry: {0}")]
+    |       ^^^^^
+
+error: cannot find attribute `from` in this scope
+   --> src\types\error.rs:188:16
+    |
+188 |     LlmError(#[from] LlmError),
+    |                ^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:190:7
+    |
+190 |     #[error("empty output schema — cannot validate without a schema")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:197:7
+    |
+197 |     #[error("runtime `{runtime}` not found: {reason}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:200:7
+    |
+200 |     #[error("skill `{skill_name}` execution timed out after {timeout_secs}s")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:206:7
+    |
+206 |     #[error("skill `{skill_name}` exited with code {exit_code}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:214:7
+    |
+214 |     #[error("skill entry file not found: {path}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:217:7
+    |
+217 |     #[error("io error: {0}")]
+    |       ^^^^^
+
+error: cannot find attribute `from` in this scope
+   --> src\types\error.rs:218:10
+    |
+218 |     Io(#[from] std::io::Error),
+    |          ^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:220:7
+    |
+220 |     #[error("input serialization failed: {0}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:223:7
+    |
+223 |     #[error("skill execution failed: {0}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:226:7
+    |
+226 |     #[error("execution pool exhausted (max concurrent: {max_concurrent})")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:229:7
+    |
+229 |     #[error("memory limit setup failed: {reason}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:232:7
+    |
+232 |     #[error("permission denied for skill `{skill_name}`: {reason}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:239:7
+    |
+239 |     #[error("unsupported embedding model: `{model}`")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:242:7
+    |
+242 |     #[error("embedding model not loaded — call preheat() or embed() to trigger lazy init")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:245:7
+    |
+245 |     #[error("model init failed after {retries} retries: {reason}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:248:7
+    |
+248 |     #[error("embedding inference failed: {0}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:251:7
+    |
+251 |     #[error("empty input — cannot embed zero texts")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:254:7
+    |
+254 |     #[error("dimension mismatch: expected {expected}, got {actual}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:257:7
+    |
+257 |     #[error("offline mode: model `{model}` not found in cache dir `{cache_dir}` — place model files manually o...
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:264:7
+    |
+264 |     #[error("workflow not found: `{name}`")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:267:7
+    |
+267 |     #[error("workflow manifest parse error in {path}: {reason}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:270:7
+    |
+270 |     #[error("workflow validation error in `{workflow_name}`: {errors}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:276:7
+    |
+276 |     #[error("workflow manifest not found: {path}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:279:7
+    |
+279 |     #[error("workflow scan error: {0}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:284:7
+    |
+284 |     #[error("workflow `{name}` conflict: {reason}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:287:7
+    |
+287 |     #[error("step `{step_id}` failed: {reason}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:290:7
+    |
+290 |     #[error("step `{step_id}` not found in workflow `{workflow_name}`")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:296:7
+    |
+296 |     #[error("duplicate step id `{step_id}` in workflow `{workflow_name}`")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:302:7
+    |
+302 |     #[error("cycle detected in workflow `{workflow_name}`: {cycle}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:308:7
+    |
+308 |     #[error("missing dependency in workflow `{workflow_name}`: step `{step_id}` depends on unknown step `{depe...
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:315:7
+    |
+315 |     #[error("expression resolution error: {reason}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:318:7
+    |
+318 |     #[error("workflow execution timed out after {timeout_secs}s")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:321:7
+    |
+321 |     #[error("workflow execution aborted: {reason}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:324:7
+    |
+324 |     #[error("missing required variable: `{var_name}`")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:327:7
+    |
+327 |     #[error("internal workflow error: {reason}")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:330:7
+    |
+330 |     #[error("skill `{skill_name}` not found for step `{step_id}`")]
+    |       ^^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:333:7
+    |
+333 |     #[error("executor error during workflow execution: {0}")]
+    |       ^^^^^
+
+error: cannot find attribute `from` in this scope
+   --> src\types\error.rs:334:16
+    |
+334 |     Executor(#[from] ExecutorError),
+    |                ^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:336:7
+    |
+336 |     #[error("guardian validation failed during workflow execution: {0}")]
+    |       ^^^^^
+
+error: cannot find attribute `from` in this scope
+   --> src\types\error.rs:337:16
+    |
+337 |     Guardian(#[from] GuardianError),
+    |                ^^^^
+
+error: cannot find attribute `error` in this scope
+   --> src\types\error.rs:339:7
+    |
+339 |     #[error("io error during workflow execution: {0}")]
+    |       ^^^^^
+
+error: cannot find attribute `from` in this scope
+   --> src\types\error.rs:340:10
+    |
+340 |     Io(#[from] std::io::Error),
+    |          ^^^^
+
+error[E0433]: cannot find module or crate `keyring` in this scope
+  --> src\config\keystore.rs:77:11
+   |
+77 |     match keyring::Entry::new(KEYRING_SERVICE, model_id) {
+   |           ^^^^^^^ use of unresolved module or unlinked crate `keyring`
+   |
+   = help: if you wanted to use a crate named `keyring`, use `cargo add keyring` to add it to your `Cargo.toml`
+help: consider importing one of these enums
+   |
+ 3 + use std::collections::btree_map::Entry;
+   |
+ 3 + use std::collections::hash_map::Entry;
+   |
+help: if you import `Entry`, refer to it directly
+   |
+77 -     match keyring::Entry::new(KEYRING_SERVICE, model_id) {
+77 +     match Entry::new(KEYRING_SERVICE, model_id) {
+   |
+
+error[E0433]: cannot find module or crate `keyring` in this scope
+  --> src\config\keystore.rs:81:17
+   |
+81 |             Err(keyring::Error::NoEntry) => Ok(KeySource::None),
+   |                 ^^^^^^^ use of unresolved module or unlinked crate `keyring`
+   |
+   = help: if you wanted to use a crate named `keyring`, use `cargo add keyring` to add it to your `Cargo.toml`
+help: consider importing one of these items
+   |
+ 3 + use std::error::Error;
+   |
+ 3 + use std::fmt::Error;
+   |
+ 3 + use std::io::Error;
+   |
+ 3 + use core::error::Error;
+   |
+   = and 1 other candidate
+help: if you import `Error`, refer to it directly
+   |
+81 -             Err(keyring::Error::NoEntry) => Ok(KeySource::None),
+81 +             Err(Error::NoEntry) => Ok(KeySource::None),
+   |
+
+error[E0433]: cannot find module or crate `keyring` in this scope
+   --> src\config\keystore.rs:106:17
+    |
+106 |     let entry = keyring::Entry::new(KEYRING_SERVICE, model_id)
+    |                 ^^^^^^^ use of unresolved module or unlinked crate `keyring`
+    |
+    = help: if you wanted to use a crate named `keyring`, use `cargo add keyring` to add it to your `Cargo.toml`
+help: consider importing one of these enums
+    |
+  3 + use std::collections::btree_map::Entry;
+    |
+  3 + use std::collections::hash_map::Entry;
+    |
+help: if you import `Entry`, refer to it directly
+    |
+106 -     let entry = keyring::Entry::new(KEYRING_SERVICE, model_id)
+106 +     let entry = Entry::new(KEYRING_SERVICE, model_id)
+    |
+
+error[E0433]: cannot find module or crate `keyring` in this scope
+   --> src\config\keystore.rs:119:17
+    |
+119 |     let entry = keyring::Entry::new(KEYRING_SERVICE, model_id)
+    |                 ^^^^^^^ use of unresolved module or unlinked crate `keyring`
+    |
+    = help: if you wanted to use a crate named `keyring`, use `cargo add keyring` to add it to your `Cargo.toml`
+help: consider importing one of these enums
+    |
+  3 + use std::collections::btree_map::Entry;
+    |
+  3 + use std::collections::hash_map::Entry;
+    |
+help: if you import `Entry`, refer to it directly
+    |
+119 -     let entry = keyring::Entry::new(KEYRING_SERVICE, model_id)
+119 +     let entry = Entry::new(KEYRING_SERVICE, model_id)
+    |
+
+error[E0433]: cannot find module or crate `keyring` in this scope
+   --> src\config\keystore.rs:127:13
+    |
+127 |         Err(keyring::Error::NoEntry) => Ok(()), // Already gone — fine
+    |             ^^^^^^^ use of unresolved module or unlinked crate `keyring`
+    |
+    = help: if you wanted to use a crate named `keyring`, use `cargo add keyring` to add it to your `Cargo.toml`
+help: consider importing one of these items
+    |
+  3 + use std::error::Error;
+    |
+  3 + use std::fmt::Error;
+    |
+  3 + use std::io::Error;
+    |
+  3 + use core::error::Error;
+    |
+    = and 1 other candidate
+help: if you import `Error`, refer to it directly
+    |
+127 -         Err(keyring::Error::NoEntry) => Ok(()), // Already gone — fine
+127 +         Err(Error::NoEntry) => Ok(()), // Already gone — fine
+    |
+
+error[E0277]: `?` couldn't convert the error to `AppError`
+  --> src\commands\config_commands.rs:30:42
+   |
+30 |     Ok(crate::config::validate(&settings)?)
+   |        ----------------------------------^ the trait `std::convert::From<ConfigError>` is not implemented for `AppError`
+   |        |
+   |        this can't be annotated with `?` because it has type `Result<_, ConfigError>`
+   |
+note: `AppError` needs to implement `From<ConfigError>`
+  --> src\types\error.rs:10:1
+   |
+10 | pub enum AppError {
+   | ^^^^^^^^^^^^^^^^^
+   = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `AppError`
+  --> src\config\mod.rs:54:28
+   |
+54 |         paths.ensure_dirs()?;
+   |               -------------^ the trait `std::convert::From<std::io::Error>` is not implemented for `AppError`
+   |               |
+   |               this can't be annotated with `?` because it has type `Result<_, std::io::Error>`
+   |
+note: `AppError` needs to implement `From<std::io::Error>`
+  --> src\types\error.rs:10:1
+   |
+10 | pub enum AppError {
+   | ^^^^^^^^^^^^^^^^^
+   = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0599]: `SlotFillingError` doesn't implement `std::fmt::Display`
+   --> src\guardian\validator.rs:177:36
+    |
+177 |                     errors: vec![e.to_string()],
+    |                                    ^^^^^^^^^ method cannot be called on `SlotFillingError` due to unsatisfied trait bounds
+    |
+   ::: src\types\error.rs:125:1
+    |
+125 | pub enum SlotFillingError {
+    | ------------------------- method `to_string` not found for this enum because it doesn't satisfy `SlotFillingError: ToString` or `SlotFillingError: std::fmt::Display`
+    |
+    = note: the following trait bounds were not satisfied:
+            `SlotFillingError: std::fmt::Display`
+            which is required by `SlotFillingError: ToString`
+note: the trait `std::fmt::Display` must be implemented
+   --> /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\core\src\fmt\mod.rs:1187:0
+    = help: items from traits can only be used if the trait is implemented and in scope
+    = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+            candidate #1: `ToString`
+
+error[E0599]: `SlotFillingError` doesn't implement `std::fmt::Display`
+   --> src\guardian\validator.rs:202:31
+    |
+202 |                 raw_output: e.to_string(),
+    |                               ^^^^^^^^^ method cannot be called on `SlotFillingError` due to unsatisfied trait bounds
+    |
+   ::: src\types\error.rs:125:1
+    |
+125 | pub enum SlotFillingError {
+    | ------------------------- method `to_string` not found for this enum because it doesn't satisfy `SlotFillingError: ToString` or `SlotFillingError: std::fmt::Display`
+    |
+    = note: the following trait bounds were not satisfied:
+            `SlotFillingError: std::fmt::Display`
+            which is required by `SlotFillingError: ToString`
+note: the trait `std::fmt::Display` must be implemented
+   --> /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\core\src\fmt\mod.rs:1187:0
+    = help: items from traits can only be used if the trait is implemented and in scope
+    = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+            candidate #1: `ToString`
+
+error[E0277]: `?` couldn't convert the error to `GuardianError`
+   --> src\guardian\mod.rs:354:77
+    |
+354 |                 current_output = provider.generate(&correction_prompt).await?;
+    |                                  -------------------------------------------^ the trait `std::convert::From<LlmError>` is not implemented for `GuardianError`
+    |                                  |
+    |                                  this can't be annotated with `?` because it has type `Result<_, LlmError>`
+    |
+note: `GuardianError` needs to implement `From<LlmError>`
+   --> src\types\error.rs:162:1
+    |
+162 | pub enum GuardianError {
+    | ^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: the trait bound `AppError: std::convert::From<EmbeddingError>` is not satisfied
+   --> src\knowledge\mod.rs:217:51
+    |
+217 |             return Err(EmbeddingError::EmptyInput.into());
+    |                                                   ^^^^ unsatisfied trait bound
+    |
+help: the trait `std::convert::From<EmbeddingError>` is not implemented for `AppError`
+   --> src\types\error.rs:10:1
+    |
+ 10 | pub enum AppError {
+    | ^^^^^^^^^^^^^^^^^
+    = note: required for `EmbeddingError` to implement `Into<AppError>`
+
+error[E0277]: `?` couldn't convert the error to `AppError`
+   --> src\knowledge\mod.rs:225:91
+    |
+223 |           let emb = tokio::task::spawn_blocking(move || embedder.embed(&text_owned))
+    |  ___________________-
+224 | |             .await
+    | |__________________- this has type `Result<_, JoinError>`
+225 |               .map_err(|e| EmbeddingError::InferenceFailed(format!("task join error: {e}")))??;
+    |                -----------------------------------------------------------------------------^ the trait `std::convert::From<EmbeddingError>` is not implemented for `AppError`
+    |                |
+    |                this can't be annotated with `?` because it has type `Result<_, EmbeddingError>`
+    |
+note: `AppError` needs to implement `From<EmbeddingError>`
+   --> src\types\error.rs:10:1
+    |
+ 10 | pub enum AppError {
+    | ^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `AppError`
+   --> src\knowledge\mod.rs:225:92
+    |
+223 |           let emb = tokio::task::spawn_blocking(move || embedder.embed(&text_owned))
+    |  ___________________-
+224 | |             .await
+225 | |             .map_err(|e| EmbeddingError::InferenceFailed(format!("task join error: {e}")))??;
+    | |                                                                                           -^ the trait `std::convert::From<EmbeddingError>` is not implemented for `AppError`
+    | |___________________________________________________________________________________________|
+    |                                                                                             this can't be annotated with `?` because it has type `Result<_, EmbeddingError>`
+    |
+note: `AppError` needs to implement `From<EmbeddingError>`
+   --> src\types\error.rs:10:1
+    |
+ 10 | pub enum AppError {
+    | ^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: the trait bound `AppError: std::convert::From<EmbeddingError>` is not satisfied
+   --> src\knowledge\mod.rs:236:51
+    |
+236 |             return Err(EmbeddingError::EmptyInput.into());
+    |                                                   ^^^^ unsatisfied trait bound
+    |
+help: the trait `std::convert::From<EmbeddingError>` is not implemented for `AppError`
+   --> src\types\error.rs:10:1
+    |
+ 10 | pub enum AppError {
+    | ^^^^^^^^^^^^^^^^^
+    = note: required for `EmbeddingError` to implement `Into<AppError>`
+
+error[E0277]: `?` couldn't convert the error to `AppError`
+   --> src\knowledge\mod.rs:244:91
+    |
+242 |           let embeddings = tokio::task::spawn_blocking(move || embedder.embed_batch(&texts_owned))
+    |  __________________________-
+243 | |             .await
+    | |__________________- this has type `Result<_, JoinError>`
+244 |               .map_err(|e| EmbeddingError::InferenceFailed(format!("task join error: {e}")))??;
+    |                -----------------------------------------------------------------------------^ the trait `std::convert::From<EmbeddingError>` is not implemented for `AppError`
+    |                |
+    |                this can't be annotated with `?` because it has type `Result<_, EmbeddingError>`
+    |
+note: `AppError` needs to implement `From<EmbeddingError>`
+   --> src\types\error.rs:10:1
+    |
+ 10 | pub enum AppError {
+    | ^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `AppError`
+   --> src\knowledge\mod.rs:244:92
+    |
+242 |           let embeddings = tokio::task::spawn_blocking(move || embedder.embed_batch(&texts_owned))
+    |  __________________________-
+243 | |             .await
+244 | |             .map_err(|e| EmbeddingError::InferenceFailed(format!("task join error: {e}")))??;
+    | |                                                                                           -^ the trait `std::convert::From<EmbeddingError>` is not implemented for `AppError`
+    | |___________________________________________________________________________________________|
+    |                                                                                             this can't be annotated with `?` because it has type `Result<_, EmbeddingError>`
+    |
+note: `AppError` needs to implement `From<EmbeddingError>`
+   --> src\types\error.rs:10:1
+    |
+ 10 | pub enum AppError {
+    | ^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: the trait bound `AppError: std::convert::From<EmbeddingError>` is not satisfied
+   --> src\knowledge\mod.rs:261:86
+    |
+261 |             Err(EmbeddingError::InferenceFailed("expected 2 embeddings".to_string()).into())
+    |                                                                                      ^^^^ unsatisfied trait bound
+    |
+help: the trait `std::convert::From<EmbeddingError>` is not implemented for `AppError`
+   --> src\types\error.rs:10:1
+    |
+ 10 | pub enum AppError {
+    | ^^^^^^^^^^^^^^^^^
+    = note: required for `EmbeddingError` to implement `Into<AppError>`
+
+error[E0277]: `?` couldn't convert the error to `AppError`
+   --> src\knowledge\mod.rs:331:91
+    |
+329 |           let embedder = tokio::task::spawn_blocking(move || Embedder::new(&model_name, &cache_dir))
+    |  ________________________-
+330 | |             .await
+    | |__________________- this has type `Result<_, JoinError>`
+331 |               .map_err(|e| EmbeddingError::InferenceFailed(format!("task join error: {e}")))??;
+    |                -----------------------------------------------------------------------------^ the trait `std::convert::From<EmbeddingError>` is not implemented for `AppError`
+    |                |
+    |                this can't be annotated with `?` because it has type `Result<_, EmbeddingError>`
+    |
+note: `AppError` needs to implement `From<EmbeddingError>`
+   --> src\types\error.rs:10:1
+    |
+ 10 | pub enum AppError {
+    | ^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `AppError`
+   --> src\knowledge\mod.rs:331:92
+    |
+329 |           let embedder = tokio::task::spawn_blocking(move || Embedder::new(&model_name, &cache_dir))
+    |  ________________________-
+330 | |             .await
+331 | |             .map_err(|e| EmbeddingError::InferenceFailed(format!("task join error: {e}")))??;
+    | |                                                                                           -^ the trait `std::convert::From<EmbeddingError>` is not implemented for `AppError`
+    | |___________________________________________________________________________________________|
+    |                                                                                             this can't be annotated with `?` because it has type `Result<_, EmbeddingError>`
+    |
+note: `AppError` needs to implement `From<EmbeddingError>`
+   --> src\types\error.rs:10:1
+    |
+ 10 | pub enum AppError {
+    | ^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0599]: `SlotFillingError` doesn't implement `std::fmt::Display`
+   --> src\router\slot_filler.rs:803:54
+    |
+803 |                 error: SlotFillingError::EmptySchema.to_string(),
+    |                                                      ^^^^^^^^^ method cannot be called on `SlotFillingError` due to unsatisfied trait bounds
+    |
+   ::: src\types\error.rs:125:1
+    |
+125 | pub enum SlotFillingError {
+    | ------------------------- method `to_string` not found for this enum because it doesn't satisfy `SlotFillingError: ToString` or `SlotFillingError: std::fmt::Display`
+    |
+    = note: the following trait bounds were not satisfied:
+            `SlotFillingError: std::fmt::Display`
+            which is required by `SlotFillingError: ToString`
+note: the trait `std::fmt::Display` must be implemented
+   --> /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\core\src\fmt\mod.rs:1187:0
+    = help: items from traits can only be used if the trait is implemented and in scope
+    = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+            candidate #1: `ToString`
+
+error[E0277]: `LlmError` doesn't implement `std::fmt::Display`
+   --> src\router\slot_filler.rs:839:58
+    |
+839 |                     last_errors.push(format!("LLM error: {e}"));
+    |                                                          ^^^ `LlmError` cannot be formatted with the default formatter
+    |
+help: the trait `std::fmt::Display` is not implemented for `LlmError`
+   --> src\types\error.rs:106:1
+    |
+106 | pub enum LlmError {
+    | ^^^^^^^^^^^^^^^^^
+    = note: in format strings you may be able to use `{:?}` (or {:#?} for pretty-print) instead
+
+error[E0599]: `SlotFillingError` doesn't implement `std::fmt::Display`
+   --> src\router\slot_filler.rs:851:40
+    |
+851 |                     last_errors.push(e.to_string());
+    |                                        ^^^^^^^^^ method cannot be called on `SlotFillingError` due to unsatisfied trait bounds
+    |
+   ::: src\types\error.rs:125:1
+    |
+125 | pub enum SlotFillingError {
+    | ------------------------- method `to_string` not found for this enum because it doesn't satisfy `SlotFillingError: ToString` or `SlotFillingError: std::fmt::Display`
+    |
+    = note: the following trait bounds were not satisfied:
+            `SlotFillingError: std::fmt::Display`
+            which is required by `SlotFillingError: ToString`
+note: the trait `std::fmt::Display` must be implemented
+   --> /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\core\src\fmt\mod.rs:1187:0
+    = help: items from traits can only be used if the trait is implemented and in scope
+    = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+            candidate #1: `ToString`
+
+error[E0599]: `SlotFillingError` doesn't implement `std::fmt::Display`
+   --> src\router\slot_filler.rs:935:14
+    |
+929 |               error: SlotFillingError::MaxRetriesExceeded {
+    |  ____________________-
+930 | |                 max_retries: self.config.max_retries,
+931 | |                 attempts: max_attempts,
+932 | |                 last_errors,
+...   |
+935 | |             .to_string(),
+    | |             -^^^^^^^^^ method cannot be called on `SlotFillingError` due to unsatisfied trait bounds
+    | |_____________|
+    |
+    |
+   ::: src\types\error.rs:125:1
+    |
+125 |   pub enum SlotFillingError {
+    |   ------------------------- method `to_string` not found for this enum because it doesn't satisfy `SlotFillingError: ToString` or `SlotFillingError: std::fmt::Display`
+    |
+    = note: the following trait bounds were not satisfied:
+            `SlotFillingError: std::fmt::Display`
+            which is required by `SlotFillingError: ToString`
+note: the trait `std::fmt::Display` must be implemented
+   --> /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\core\src\fmt\mod.rs:1187:0
+    = help: items from traits can only be used if the trait is implemented and in scope
+    = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+            candidate #1: `ToString`
+
+error[E0277]: `?` couldn't convert the error to `ExecutorError`
+   --> src\skill\executor\mod.rs:245:36
+    |
+245 |         let mut child = cmd.spawn()?;
+    |                             -------^ the trait `std::convert::From<std::io::Error>` is not implemented for `ExecutorError`
+    |                             |
+    |                             this can't be annotated with `?` because it has type `Result<_, std::io::Error>`
+    |
+note: `ExecutorError` needs to implement `From<std::io::Error>`
+   --> src\types\error.rs:196:1
+    |
+196 | pub enum ExecutorError {
+    | ^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: the trait bound `ExecutorError: std::convert::From<std::io::Error>` is not satisfied
+   --> src\skill\executor\mod.rs:259:42
+    |
+259 | ...                   return Err(e.into());
+    |                                    ^^^^ unsatisfied trait bound
+    |
+help: the trait `std::convert::From<std::io::Error>` is not implemented for `ExecutorError`
+   --> src\types\error.rs:196:1
+    |
+196 | pub enum ExecutorError {
+    | ^^^^^^^^^^^^^^^^^^^^^^
+    = note: required for `std::io::Error` to implement `Into<ExecutorError>`
+
+error[E0277]: the trait bound `ExecutorError: std::convert::From<std::io::Error>` is not satisfied
+   --> src\skill\executor\mod.rs:264:40
+    |
+264 |                 Err(e) => return Err(e.into()),
+    |                                        ^^^^ unsatisfied trait bound
+    |
+help: the trait `std::convert::From<std::io::Error>` is not implemented for `ExecutorError`
+   --> src\types\error.rs:196:1
+    |
+196 | pub enum ExecutorError {
+    | ^^^^^^^^^^^^^^^^^^^^^^
+    = note: required for `std::io::Error` to implement `Into<ExecutorError>`
+
+error[E0599]: `ExecutorError` doesn't implement `std::fmt::Display`
+   --> src\skill\mcp.rs:234:62
+    |
+234 |     let sandbox = SkillSandbox::new().map_err(|e| McpError(e.to_string()))?;
+    |                                                              ^^^^^^^^^ method cannot be called on `ExecutorError` due to unsatisfied trait bounds
+    |
+   ::: src\types\error.rs:196:1
+    |
+196 | pub enum ExecutorError {
+    | ---------------------- method `to_string` not found for this enum because it doesn't satisfy `ExecutorError: ToString` or `ExecutorError: std::fmt::Display`
+    |
+    = note: the following trait bounds were not satisfied:
+            `ExecutorError: std::fmt::Display`
+            which is required by `ExecutorError: ToString`
+note: the trait `std::fmt::Display` must be implemented
+   --> /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\core\src\fmt\mod.rs:1187:0
+    = help: items from traits can only be used if the trait is implemented and in scope
+    = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+            candidate #1: `ToString`
+
+error[E0599]: `SkillError` doesn't implement `std::fmt::Display`
+   --> src\skill\scanner.rs:243:27
+    |
+243 |                 reason: e.to_string(),
+    |                           ^^^^^^^^^ method cannot be called on `SkillError` due to unsatisfied trait bounds
+    |
+   ::: src\types\error.rs:87:1
+    |
+ 87 | pub enum SkillError {
+    | ------------------- method `to_string` not found for this enum because it doesn't satisfy `SkillError: ToString` or `SkillError: std::fmt::Display`
+    |
+    = note: the following trait bounds were not satisfied:
+            `SkillError: std::fmt::Display`
+            which is required by `SkillError: ToString`
+note: the trait `std::fmt::Display` must be implemented
+   --> /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\core\src\fmt\mod.rs:1187:0
+    = help: items from traits can only be used if the trait is implemented and in scope
+    = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+            candidate #1: `ToString`
+
+error[E0599]: `SkillError` doesn't implement `std::fmt::Display`
+   --> src\skill\scanner.rs:263:23
+    |
+263 |             reason: e.to_string(),
+    |                       ^^^^^^^^^ method cannot be called on `SkillError` due to unsatisfied trait bounds
+    |
+   ::: src\types\error.rs:87:1
+    |
+ 87 | pub enum SkillError {
+    | ------------------- method `to_string` not found for this enum because it doesn't satisfy `SkillError: ToString` or `SkillError: std::fmt::Display`
+    |
+    = note: the following trait bounds were not satisfied:
+            `SkillError: std::fmt::Display`
+            which is required by `SkillError: ToString`
+note: the trait `std::fmt::Display` must be implemented
+   --> /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\core\src\fmt\mod.rs:1187:0
+    = help: items from traits can only be used if the trait is implemented and in scope
+    = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+            candidate #1: `ToString`
+
+error[E0599]: `WorkflowError` doesn't implement `std::fmt::Display`
+   --> src\workflow\scheduler.rs:206:64
+    |
+206 |                         finish_failed(&mut g, &store, &sid, &e.to_string(), 0, &step.skill)?;
+    |                                                                ^^^^^^^^^ method cannot be called on `WorkflowError` due to unsatisfied trait bounds
+    |
+   ::: src\types\error.rs:263:1
+    |
+263 | pub enum WorkflowError {
+    | ---------------------- method `to_string` not found for this enum because it doesn't satisfy `WorkflowError: ToString` or `WorkflowError: std::fmt::Display`
+    |
+    = note: the following trait bounds were not satisfied:
+            `WorkflowError: std::fmt::Display`
+            which is required by `WorkflowError: ToString`
+note: the trait `std::fmt::Display` must be implemented
+   --> /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\core\src\fmt\mod.rs:1187:0
+    = help: items from traits can only be used if the trait is implemented and in scope
+    = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+            candidate #1: `ToString`
+
+error[E0599]: `WorkflowError` doesn't implement `std::fmt::Display`
+   --> src\workflow\scheduler.rs:290:39
+    |
+290 | ...                   reason: e.to_string(),
+    |                                 ^^^^^^^^^ method cannot be called on `WorkflowError` due to unsatisfied trait bounds
+    |
+   ::: src\types\error.rs:263:1
+    |
+263 | pub enum WorkflowError {
+    | ---------------------- method `to_string` not found for this enum because it doesn't satisfy `WorkflowError: ToString` or `WorkflowError: std::fmt::Display`
+    |
+    = note: the following trait bounds were not satisfied:
+            `WorkflowError: std::fmt::Display`
+            which is required by `WorkflowError: ToString`
+note: the trait `std::fmt::Display` must be implemented
+   --> /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\core\src\fmt\mod.rs:1187:0
+    = help: items from traits can only be used if the trait is implemented and in scope
+    = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+            candidate #1: `ToString`
+
+error[E0599]: `WorkflowError` doesn't implement `std::fmt::Display`
+   --> src\workflow\scheduler.rs:304:39
+    |
+304 | ...                   reason: e.to_string(),
+    |                                 ^^^^^^^^^ method cannot be called on `WorkflowError` due to unsatisfied trait bounds
+    |
+   ::: src\types\error.rs:263:1
+    |
+263 | pub enum WorkflowError {
+    | ---------------------- method `to_string` not found for this enum because it doesn't satisfy `WorkflowError: ToString` or `WorkflowError: std::fmt::Display`
+    |
+    = note: the following trait bounds were not satisfied:
+            `WorkflowError: std::fmt::Display`
+            which is required by `WorkflowError: ToString`
+note: the trait `std::fmt::Display` must be implemented
+   --> /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\core\src\fmt\mod.rs:1187:0
+    = help: items from traits can only be used if the trait is implemented and in scope
+    = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+            candidate #1: `ToString`
+
+error[E0277]: `?` couldn't convert the error to `WorkflowError`
+   --> src\workflow\scheduler.rs:578:60
+    |
+578 |     let exec_result = executor.execute(&skill, input).await?;
+    |                       -------------------------------------^ the trait `std::convert::From<ExecutorError>` is not implemented for `WorkflowError`
+    |                       |
+    |                       this can't be annotated with `?` because it has type `Result<_, ExecutorError>`
+    |
+note: `WorkflowError` needs to implement `From<ExecutorError>`
+   --> src\types\error.rs:263:1
+    |
+263 | pub enum WorkflowError {
+    | ^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `WorkflowError`
+   --> src\workflow\scheduler.rs:579:62
+    |
+579 |     guardian.validate_once(&skill, &exec_result.stdout).await?;
+    |     ---------------------------------------------------------^ the trait `std::convert::From<GuardianError>` is not implemented for `WorkflowError`
+    |     |
+    |     this can't be annotated with `?` because it has type `Result<_, GuardianError>`
+    |
+note: `WorkflowError` needs to implement `From<GuardianError>`
+   --> src\types\error.rs:263:1
+    |
+263 | pub enum WorkflowError {
+    | ^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `AppError` doesn't implement `std::fmt::Display`
+  --> src\memory.rs:87:43
+   |
+87 |         .map_err(|e| format!("skill init: {e}"))?;
+   |                                           ^^^ `AppError` cannot be formatted with the default formatter
+   |
+help: the trait `std::fmt::Display` is not implemented for `AppError`
+  --> src\types\error.rs:10:1
+   |
+10 | pub enum AppError {
+   | ^^^^^^^^^^^^^^^^^
+   = note: in format strings you may be able to use `{:?}` (or {:#?} for pretty-print) instead
+
+error[E0277]: `WorkflowError` doesn't implement `std::fmt::Display`
+   --> src\memory.rs:97:65
+    |
+ 97 |     let runs = store.list_runs().map_err(|e| format!("run scan: {e}"))?.len();
+    |                                                                 ^^^ `WorkflowError` cannot be formatted with the default formatter
+    |
+help: the trait `std::fmt::Display` is not implemented for `WorkflowError`
+   --> src\types\error.rs:263:1
+    |
+263 | pub enum WorkflowError {
+    | ^^^^^^^^^^^^^^^^^^^^^^
+    = note: in format strings you may be able to use `{:?}` (or {:#?} for pretty-print) instead
+
+error[E0599]: `ConfigError` doesn't implement `std::fmt::Display`
+  --> src\config\migration.rs:59:35
+   |
+59 |                         reason: e.to_string(),
+   |                                   ^^^^^^^^^ method cannot be called on `ConfigError` due to unsatisfied trait bounds
+   |
+  ::: src\types\error.rs:59:1
+   |
+59 | pub enum ConfigError {
+   | -------------------- method `to_string` not found for this enum because it doesn't satisfy `ConfigError: ToString` or `ConfigError: std::fmt::Display`
+   |
+   = note: the following trait bounds were not satisfied:
+           `ConfigError: std::fmt::Display`
+           which is required by `ConfigError: ToString`
+note: the trait `std::fmt::Display` must be implemented
+  --> /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\core\src\fmt\mod.rs:1187:0
+   = help: items from traits can only be used if the trait is implemented and in scope
+   = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+           candidate #1: `ToString`
+
+error[E0277]: `?` couldn't convert the error to `AppError`
+   --> src\config\watcher.rs:150:54
+    |
+150 |         let new_settings = Settings::load(&self.path)?;
+    |                            --------------------------^ the trait `std::convert::From<ConfigError>` is not implemented for `AppError`
+    |                            |
+    |                            this can't be annotated with `?` because it has type `Result<_, ConfigError>`
+    |
+note: `AppError` needs to implement `From<ConfigError>`
+   --> src\types\error.rs:10:1
+    |
+ 10 | pub enum AppError {
+    | ^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `AppError`
+   --> src\config\mod.rs:123:49
+    |
+123 |         settings.save(&self.paths.settings_file)?;
+    |                  -------------------------------^ the trait `std::convert::From<ConfigError>` is not implemented for `AppError`
+    |                  |
+    |                  this can't be annotated with `?` because it has type `Result<_, ConfigError>`
+    |
+note: `AppError` needs to implement `From<ConfigError>`
+   --> src\types\error.rs:10:1
+    |
+ 10 | pub enum AppError {
+    | ^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\qa.rs:265:18
+    |
+260 |                   let resolved = self.router.resolve(
+    |  ____________________________________________-
+261 | |                     model,
+262 | |                     skill_preferred,
+263 | |                     agent_default,
+264 | |                     crate::router::model_router::SelectionStrategy::Priority,
+265 | |                 )?;
+    | |                 -^ the trait `std::convert::From<ModelRouterError>` is not implemented for `KnowledgeError`
+    | |_________________|
+    |                   this can't be annotated with `?` because it has type `Result<_, ModelRouterError>`
+    |
+note: `KnowledgeError` needs to implement `From<ModelRouterError>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0599]: `AppError` doesn't implement `std::fmt::Display`
+   --> src\knowledge\qa.rs:289:74
+    |
+289 |                     crate::knowledge::error::KnowledgeError::Embedding(e.to_string())
+    |                                                                          ^^^^^^^^^ method cannot be called on `AppError` due to unsatisfied trait bounds
+    |
+   ::: src\types\error.rs:10:1
+    |
+ 10 | pub enum AppError {
+    | ----------------- method `to_string` not found for this enum because it doesn't satisfy `AppError: ToString` or `AppError: std::fmt::Display`
+    |
+    = note: the following trait bounds were not satisfied:
+            `AppError: std::fmt::Display`
+            which is required by `AppError: ToString`
+note: the trait `std::fmt::Display` must be implemented
+   --> /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\core\src\fmt\mod.rs:1187:0
+    = help: items from traits can only be used if the trait is implemented and in scope
+    = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+            candidate #1: `ToString`
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\qa.rs:346:51
+    |
+346 |         let raw = provider.generate(&prompt).await?;
+    |                   --------------------------------^ the trait `std::convert::From<LlmError>` is not implemented for `KnowledgeError`
+    |                   |
+    |                   this can't be annotated with `?` because it has type `Result<_, LlmError>`
+    |
+note: `KnowledgeError` needs to implement `From<LlmError>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0599]: `AppError` doesn't implement `std::fmt::Display`
+   --> src\knowledge\qa.rs:371:79
+    |
+371 |             .map_err(|e| crate::knowledge::error::KnowledgeError::Embedding(e.to_string()))?;
+    |                                                                               ^^^^^^^^^ method cannot be called on `AppError` due to unsatisfied trait bounds
+    |
+   ::: src\types\error.rs:10:1
+    |
+ 10 | pub enum AppError {
+    | ----------------- method `to_string` not found for this enum because it doesn't satisfy `AppError: ToString` or `AppError: std::fmt::Display`
+    |
+    = note: the following trait bounds were not satisfied:
+            `AppError: std::fmt::Display`
+            which is required by `AppError: ToString`
+note: the trait `std::fmt::Display` must be implemented
+   --> /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\core\src\fmt\mod.rs:1187:0
+    = help: items from traits can only be used if the trait is implemented and in scope
+    = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+            candidate #1: `ToString`
+
+error[E0599]: `AppError` doesn't implement `std::fmt::Display`
+   --> src\knowledge\qa.rs:388:79
+    |
+388 |             .map_err(|e| crate::knowledge::error::KnowledgeError::Embedding(e.to_string()))?;
+    |                                                                               ^^^^^^^^^ method cannot be called on `AppError` due to unsatisfied trait bounds
+    |
+   ::: src\types\error.rs:10:1
+    |
+ 10 | pub enum AppError {
+    | ----------------- method `to_string` not found for this enum because it doesn't satisfy `AppError: ToString` or `AppError: std::fmt::Display`
+    |
+    = note: the following trait bounds were not satisfied:
+            `AppError: std::fmt::Display`
+            which is required by `AppError: ToString`
+note: the trait `std::fmt::Display` must be implemented
+   --> /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\core\src\fmt\mod.rs:1187:0
+    = help: items from traits can only be used if the trait is implemented and in scope
+    = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+            candidate #1: `ToString`
+
+error[E0599]: `AppError` doesn't implement `std::fmt::Display`
+   --> src\knowledge\qa.rs:408:79
+    |
+408 |             .map_err(|e| crate::knowledge::error::KnowledgeError::Embedding(e.to_string()))?;
+    |                                                                               ^^^^^^^^^ method cannot be called on `AppError` due to unsatisfied trait bounds
+    |
+   ::: src\types\error.rs:10:1
+    |
+ 10 | pub enum AppError {
+    | ----------------- method `to_string` not found for this enum because it doesn't satisfy `AppError: ToString` or `AppError: std::fmt::Display`
+    |
+    = note: the following trait bounds were not satisfied:
+            `AppError: std::fmt::Display`
+            which is required by `AppError: ToString`
+note: the trait `std::fmt::Display` must be implemented
+   --> /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\core\src\fmt\mod.rs:1187:0
+    = help: items from traits can only be used if the trait is implemented and in scope
+    = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+            candidate #1: `ToString`
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:173:44
+    |
+173 |             std::fs::create_dir_all(parent)?;
+    |             -------------------------------^ the trait `std::convert::From<std::io::Error>` is not implemented for `KnowledgeError`
+    |             |
+    |             this can't be annotated with `?` because it has type `Result<_, std::io::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<std::io::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:175:45
+    |
+175 |         let conn = Connection::open(db_path)?;
+    |                    -------------------------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    |                    |
+    |                    this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:203:36
+    |
+203 |         let tx = conn.transaction()?;
+    |                       -------------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    |                       |
+    |                       this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:205:71
+    |
+205 |         let mut stmt = tx.prepare("SELECT rowid, name FROM documents")?;
+    |                           --------------------------------------------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    |                           |
+    |                           this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:206:93
+    |
+206 |         let rows = stmt.query_map([], |r| Ok((r.get::<_, i64>(0)?, r.get::<_, String>(1)?)))?;
+    |                         --------------------------------------------------------------------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    |                         |
+    |                         this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:216:14
+    |
+213 |               tx.execute(
+    |  ________________-
+214 | |                 "INSERT INTO documents_fts(documents_fts, rowid, name) VALUES('delete', ?1, ?2)",
+215 | |                 params![rowid, bg],
+216 | |             )?;
+    | |             -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    | |_____________|
+    |               this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:225:14
+    |
+222 |               tx.execute(
+    |  ________________-
+223 | |                 "INSERT INTO documents_fts(rowid, name) VALUES (?1, ?2)",
+224 | |                 params![rowid, bg],
+225 | |             )?;
+    | |             -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    | |_____________|
+    |               this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:228:20
+    |
+228 |         tx.commit()?;
+    |            --------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    |            |
+    |            this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:258:36
+    |
+258 |         let tx = conn.transaction()?;
+    |                       -------------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    |                       |
+    |                       this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:270:10
+    |
+259 |           tx.execute(
+    |  ____________-
+260 | |             "INSERT INTO documents (id, name, path, content_hash, imported_at, total_chunks)
+261 | |              VALUES (?1, ?2, ?3, ?4, ?5, ?6)",
+262 | |             params![
+...   |
+269 | |             ],
+270 | |         )?;
+    | |         -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    | |_________|
+    |           this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:286:14
+    |
+276 |               tx.execute(
+    |  ________________-
+277 | |                 "INSERT INTO chunks (document_id, chunk_index, content, char_start, char_end)
+278 | |                  VALUES (?1, ?2, ?3, ?4, ?5)",
+279 | |                 params![
+...   |
+285 | |                 ],
+286 | |             )?;
+    | |             -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    | |_____________|
+    |               this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:292:14
+    |
+289 |               tx.execute(
+    |  ________________-
+290 | |                 "INSERT INTO chunks_fts (rowid, bigram) VALUES (?1, ?2)",
+291 | |                 params![rowid, bg],
+292 | |             )?;
+    | |             -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    | |_____________|
+    |               this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:303:10
+    |
+300 |           tx.execute(
+    |  ____________-
+301 | |             "INSERT INTO documents_fts (rowid, name) VALUES (?1, ?2)",
+302 | |             params![doc_rowid, name_bg],
+303 | |         )?;
+    | |         -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    | |_________|
+    |           this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:305:20
+    |
+305 |         tx.commit()?;
+    |            --------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    |            |
+    |            this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:322:10
+    |
+319 |           let mut stmt = conn.prepare(
+    |  _____________________________-
+320 | |             "SELECT id, name, path, content_hash, imported_at, total_chunks \
+321 | |              FROM documents ORDER BY imported_at DESC",
+322 | |         )?;
+    | |         -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    | |_________|
+    |           this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:323:55
+    |
+323 |         let rows = stmt.query_map([], row_to_document)?;
+    |                         ------------------------------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    |                         |
+    |                         this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:326:23
+    |
+326 |             out.push(r?);
+    |                      -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    |                      |
+    |                      this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:348:36
+    |
+348 |         let tx = conn.transaction()?;
+    |                       -------------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    |                       |
+    |                       this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:352:91
+    |
+352 |         let mut stmt = tx.prepare("SELECT id, content FROM chunks WHERE document_id = ?1")?;
+    |                           ----------------------------------------------------------------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    |                           |
+    |                           this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:355:11
+    |
+353 |           let rows = stmt.query_map(params![id], |r| {
+    |  _________________________-
+354 | |             Ok((r.get::<_, i64>(0)?, r.get::<_, String>(1)?))
+355 | |         })?;
+    | |          -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    | |__________|
+    |            this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:357:39
+    |
+357 |             let (rowid, content) = row?;
+    |                                    ---^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    |                                    |
+    |                                    this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:362:14
+    |
+359 |               tx.execute(
+    |  ________________-
+360 | |                 "INSERT INTO chunks_fts(chunks_fts, rowid, bigram) VALUES('delete', ?1, ?2)",
+361 | |                 params![rowid, bg],
+362 | |             )?;
+    | |             -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    | |_____________|
+    |               this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:367:85
+    |
+367 |         let mut meta = tx.prepare("SELECT rowid, name FROM documents WHERE id = ?1")?;
+    |                           ----------------------------------------------------------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    |                           |
+    |                           this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:377:14
+    |
+374 |               tx.execute(
+    |  ________________-
+375 | |                 "INSERT INTO documents_fts(documents_fts, rowid, name) VALUES('delete', ?1, ?2)",
+376 | |                 params![doc_rowid, name_bg],
+377 | |             )?;
+    | |             -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    | |_____________|
+    |               this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:380:79
+    |
+380 |         let n = tx.execute("DELETE FROM documents WHERE id = ?1", params![id])?;
+    |                    -----------------------------------------------------------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    |                    |
+    |                    this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:384:20
+    |
+384 |         tx.commit()?;
+    |            --------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    |            |
+    |            this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:403:10
+    |
+395 |           let mut stmt = conn.prepare(
+    |  _____________________________-
+396 | |             "SELECT c.document_id, c.chunk_index, c.content, c.char_start, c.char_end, d.name \
+397 | |              FROM chunks_fts \
+398 | |              JOIN chunks c ON c.id = chunks_fts.rowid \
+...   |
+402 | |              LIMIT ?2",
+403 | |         )?;
+    | |         -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    | |_________|
+    |           this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:404:84
+    |
+404 |         let rows = stmt.query_map(params![fts, limit as i64], row_to_search_result)?;
+    |                         -----------------------------------------------------------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    |                         |
+    |                         this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:407:23
+    |
+407 |             out.push(r?);
+    |                      -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    |                      |
+    |                      this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:427:10
+    |
+422 |           let mut stmt = conn.prepare(
+    |  _____________________________-
+423 | |             "SELECT c.id, c.document_id, d.name, c.chunk_index, c.content, c.embedding \
+424 | |              FROM chunks c \
+425 | |              JOIN documents d ON d.id = c.document_id \
+426 | |              WHERE c.embedding IS NOT NULL",
+427 | |         )?;
+    | |         -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    | |_________|
+    |           this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:437:11
+    |
+428 |           let rows = stmt.query_map([], |r| {
+    |  _________________________-
+429 | |             Ok((
+430 | |                 r.get::<_, i64>(0)?,          // chunk id
+431 | |                 r.get::<_, String>(1)?,       // document_id
+...   |
+436 | |             ))
+437 | |         })?;
+    | |          -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    | |__________|
+    |            this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:442:61
+    |
+442 |             let (cid, did, dname, cidx, content, blob) = row?;
+    |                                                          ---^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    |                                                          |
+    |                                                          this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:483:10
+    |
+477 |           let mut stmt = conn.prepare(
+    |  _____________________________-
+478 | |             "SELECT d.id, d.name \
+479 | |              FROM documents_fts \
+480 | |              JOIN documents d ON d.rowid = documents_fts.rowid \
+481 | |              WHERE documents_fts MATCH ?1 \
+482 | |              LIMIT ?2",
+483 | |         )?;
+    | |         -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    | |_________|
+    |           this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:489:11
+    |
+484 |           let rows = stmt.query_map(params![fts, limit as i64], |r| {
+    |  _________________________-
+485 | |             Ok(DocumentSearchResult {
+486 | |                 document_id: r.get(0)?,
+487 | |                 document_name: r.get(1)?,
+488 | |             })
+489 | |         })?;
+    | |          -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    | |__________|
+    |            this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:492:23
+    |
+492 |             out.push(r?);
+    |                      -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    |                      |
+    |                      this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:502:10
+    |
+499 |           conn.execute(
+    |  ______________-
+500 | |             "UPDATE chunks SET embedding = ?1 WHERE id = ?2",
+501 | |             params![embedding_to_bytes(embedding), chunk_id],
+502 | |         )?;
+    | |         -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    | |_________|
+    |           this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:508:94
+    |
+508 |         let mut stmt = conn.prepare("SELECT id, content FROM chunks WHERE embedding IS NULL")?;
+    |                             -----------------------------------------------------------------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    |                             |
+    |                             this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:509:93
+    |
+509 |         let rows = stmt.query_map([], |r| Ok((r.get::<_, i64>(0)?, r.get::<_, String>(1)?)))?;
+    |                         --------------------------------------------------------------------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    |                         |
+    |                         this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:512:23
+    |
+512 |             out.push(r?);
+    |                      -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    |                      |
+    |                      this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:523:10
+    |
+519 |           let n: i64 = conn.query_row(
+    |  ___________________________-
+520 | |             "SELECT COUNT(*) FROM chunks WHERE embedding IS NULL",
+521 | |             [],
+522 | |             |r| r.get(0),
+523 | |         )?;
+    | |         -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    | |_________|
+    |           this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:533:10
+    |
+529 |           let n: i64 = conn.query_row(
+    |  ___________________________-
+530 | |             "SELECT COUNT(*) FROM chunks WHERE embedding IS NOT NULL",
+531 | |             [],
+532 | |             |r| r.get(0),
+533 | |         )?;
+    | |         -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    | |_________|
+    |           this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:541:10
+    |
+539 |           let mut stmt = conn.prepare(
+    |  _____________________________-
+540 | |             "SELECT id, content FROM chunks WHERE document_id = ?1 ORDER BY chunk_index",
+541 | |         )?;
+    | |         -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    | |_________|
+    |           this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:544:11
+    |
+542 |           let rows = stmt.query_map(params![document_id], |r| {
+    |  _________________________-
+543 | |             Ok((r.get::<_, i64>(0)?, r.get::<_, String>(1)?))
+544 | |         })?;
+    | |          -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    | |__________|
+    |            this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:547:23
+    |
+547 |             out.push(r?);
+    |                      -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    |                      |
+    |                      this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:558:10
+    |
+554 |           let n: i64 = conn.query_row(
+    |  ___________________________-
+555 | |             "SELECT COUNT(*) FROM chunks WHERE embedding IS NOT NULL",
+556 | |             [],
+557 | |             |r| r.get(0),
+558 | |         )?;
+    | |         -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    | |_________|
+    |           this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `KnowledgeError`
+   --> src\knowledge\store.rs:564:85
+    |
+564 |         let res: String = conn.query_row("PRAGMA integrity_check", [], |r| r.get(0))?;
+    |                                -----------------------------------------------------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `KnowledgeError`
+    |                                |
+    |                                this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `KnowledgeError` needs to implement `From<rusqlite::Error>`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `ThemeError`
+   --> src\theme\mod.rs:273:58
+    |
+273 |         std::fs::write(self.dir.join(ACTIVE_FILE), bytes)?;
+    |         -------------------------------------------------^ the trait `std::convert::From<std::io::Error>` is not implemented for `ThemeError`
+    |         |
+    |         this can't be annotated with `?` because it has type `Result<_, std::io::Error>`
+    |
+note: `ThemeError` needs to implement `From<std::io::Error>`
+   --> src\theme\mod.rs:100:1
+    |
+100 | pub enum ThemeError {
+    | ^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:114:44
+    |
+114 |             std::fs::create_dir_all(parent)?;
+    |             -------------------------------^ the trait `std::convert::From<std::io::Error>` is not implemented for `SessionError`
+    |             |
+    |             this can't be annotated with `?` because it has type `Result<_, std::io::Error>`
+    |
+note: `SessionError` needs to implement `From<std::io::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:116:45
+    |
+116 |         let conn = Connection::open(db_path)?;
+    |                    -------------------------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    |                    |
+    |                    this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:122:46
+    |
+122 |         std::fs::create_dir_all(&backups_dir)?;
+    |         -------------------------------------^ the trait `std::convert::From<std::io::Error>` is not implemented for `SessionError`
+    |         |
+    |         this can't be annotated with `?` because it has type `Result<_, std::io::Error>`
+    |
+note: `SessionError` needs to implement `From<std::io::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:148:58
+    |
+148 |         for entry in std::fs::read_dir(&self.backups_dir)? {
+    |                      ------------------------------------^ the trait `std::convert::From<std::io::Error>` is not implemented for `SessionError`
+    |                      |
+    |                      this can't be annotated with `?` because it has type `Result<_, std::io::Error>`
+    |
+note: `SessionError` needs to implement `From<std::io::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:149:30
+    |
+149 |             let entry = entry?;
+    |                         -----^ the trait `std::convert::From<std::io::Error>` is not implemented for `SessionError`
+    |                         |
+    |                         this can't be annotated with `?` because it has type `Result<_, std::io::Error>`
+    |
+note: `SessionError` needs to implement `From<std::io::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:286:10
+    |
+273 |           conn.execute(
+    |  ______________-
+274 | |             "INSERT INTO sessions (id, agent_id, user_id, title, created_at, updated_at, metadata, status)
+275 | |              VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8)",
+276 | |             params![
+...   |
+285 | |             ],
+286 | |         )?;
+    | |         -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    | |_________|
+    |           this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:313:18
+    |
+310 |                   let mut stmt = conn.prepare(
+    |  _____________________________________-
+311 | |                     "SELECT id, agent_id, user_id, title, created_at, updated_at, metadata, status \
+312 | |                      FROM sessions WHERE agent_id = ?1 ORDER BY updated_at DESC LIMIT ?2",
+313 | |                 )?;
+    | |                 -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    | |_________________|
+    |                   this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:314:84
+    |
+314 |                 let rows = stmt.query_map(params![a, limit as i64], row_to_session)?;
+    |                                 ---------------------------------------------------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    |                                 |
+    |                                 this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:316:31
+    |
+316 |                     out.push(r?);
+    |                              -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    |                              |
+    |                              this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:323:18
+    |
+320 |                   let mut stmt = conn.prepare(
+    |  _____________________________________-
+321 | |                     "SELECT id, agent_id, user_id, title, created_at, updated_at, metadata, status \
+322 | |                      FROM sessions ORDER BY updated_at DESC LIMIT ?1",
+323 | |                 )?;
+    | |                 -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    | |_________________|
+    |                   this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:324:81
+    |
+324 |                 let rows = stmt.query_map(params![limit as i64], row_to_session)?;
+    |                                 ------------------------------------------------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    |                                 |
+    |                                 this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:326:31
+    |
+326 |                     out.push(r?);
+    |                              -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    |                              |
+    |                              this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:338:10
+    |
+335 |           let n = conn.execute(
+    |  ______________________-
+336 | |             "UPDATE sessions SET title = ?1, updated_at = ?2 WHERE id = ?3",
+337 | |             params![title, now_secs(), id],
+338 | |         )?;
+    | |         -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    | |_________|
+    |           this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:350:10
+    |
+347 |           let n = conn.execute(
+    |  ______________________-
+348 | |             "UPDATE sessions SET status = 'deleted', updated_at = ?1 WHERE id = ?2",
+349 | |             params![now_secs(), id],
+350 | |         )?;
+    | |         -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    | |_________|
+    |           this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:362:10
+    |
+359 |           let n = conn.execute(
+    |  ______________________-
+360 | |             "UPDATE sessions SET status = 'archived', updated_at = ?1 WHERE id = ?2",
+361 | |             params![now_secs(), id],
+362 | |         )?;
+    | |         -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    | |_________|
+    |           this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:377:36
+    |
+377 |         let tx = conn.transaction()?;
+    |                       -------------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    |                       |
+    |                       this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:390:10
+    |
+378 |   ...   tx.execute(
+    |  __________-
+379 | | ...       "INSERT INTO messages (session_id, role, content, tool_calls, tool_call_id, created_at, token_count)
+380 | | ...        VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7)",
+381 | | ...       params![
+...   |
+389 | | ...       ],
+390 | | ...   )?;
+    | |       -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    | |_______|
+    |         this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:396:10
+    |
+393 |           tx.execute(
+    |  ____________-
+394 | |             "INSERT INTO messages_fts (content, rowid) VALUES (?1, ?2)",
+395 | |             params![msg.content, rowid],
+396 | |         )?;
+    | |         -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    | |_________|
+    |           this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:397:20
+    |
+397 |         tx.commit()?;
+    |            --------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    |            |
+    |            this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:414:18
+    |
+411 |                   let mut stmt = conn.prepare(
+    |  _____________________________________-
+412 | |                     "SELECT id, session_id, role, content, tool_calls, tool_call_id, created_at, token_count \
+413 | |                      FROM messages WHERE session_id = ?1 AND id < ?2 ORDER BY id ASC LIMIT ?3",
+414 | |                 )?;
+    | |                 -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    | |_________________|
+    |                   this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:415:96
+    |
+415 |                 let rows = stmt.query_map(params![session_id, b, limit as i64], row_to_message)?;
+    |                                 ---------------------------------------------------------------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    |                                 |
+    |                                 this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:417:31
+    |
+417 |                     out.push(r?);
+    |                              -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    |                              |
+    |                              this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:424:18
+    |
+421 |                   let mut stmt = conn.prepare(
+    |  _____________________________________-
+422 | |                     "SELECT id, session_id, role, content, tool_calls, tool_call_id, created_at, token_count \
+423 | |                      FROM messages WHERE session_id = ?1 ORDER BY id ASC LIMIT ?2",
+424 | |                 )?;
+    | |                 -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    | |_________________|
+    |                   this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:425:93
+    |
+425 |                 let rows = stmt.query_map(params![session_id, limit as i64], row_to_message)?;
+    |                                 ------------------------------------------------------------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    |                                 |
+    |                                 this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:427:31
+    |
+427 |                     out.push(r?);
+    |                              -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    |                              |
+    |                              this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:453:10
+    |
+436 |   ...   conn.execute(
+    |  ____________-
+437 | | ...       "INSERT OR REPLACE INTO workflow_runs \
+438 | | ...        (id, session_id, workflow_name, workflow_version, input, output, status, started_at, finished_at,...
+439 | | ...        VALUES (?1,?2,?3,?4,?5,?6,?7,?8,?9,?10,?11)",
+...   |
+452 | | ...       ],
+453 | | ...   )?;
+    | |       -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    | |_______|
+    |         this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:462:10
+    |
+459 |   ...   let mut stmt = conn.prepare(
+    |  ___________________________-
+460 | | ...       "SELECT id, session_id, workflow_name, workflow_version, input, output, status, started_at, finish...
+461 | | ...        FROM workflow_runs WHERE session_id = ?1 ORDER BY started_at DESC",
+462 | | ...   )?;
+    | |       -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    | |_______|
+    |         this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:463:76
+    |
+463 |         let rows = stmt.query_map(params![session_id], row_to_workflow_run)?;
+    |                         ---------------------------------------------------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    |                         |
+    |                         this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:466:23
+    |
+466 |             out.push(r?);
+    |                      -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    |                      |
+    |                      this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:491:10
+    |
+475 |   ...   conn.execute(
+    |  ____________-
+476 | | ...       "INSERT INTO agent_calls \
+477 | | ...        (id, session_id, agent_id, user_input, assistant_response, skills_used, matched_skill, confidence...
+478 | | ...        VALUES (?1,?2,?3,?4,?5,?6,?7,?8,?9,?10)",
+...   |
+490 | | ...       ],
+491 | | ...   )?;
+    | |       -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    | |_______|
+    |         this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:500:10
+    |
+497 |   ...   let mut stmt = conn.prepare(
+    |  ___________________________-
+498 | | ...       "SELECT id, session_id, agent_id, user_input, assistant_response, skills_used, matched_skill, conf...
+499 | | ...        FROM agent_calls WHERE session_id = ?1 ORDER BY created_at DESC",
+500 | | ...   )?;
+    | |       -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    | |_______|
+    |         this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:501:74
+    |
+501 |         let rows = stmt.query_map(params![session_id], row_to_agent_call)?;
+    |                         -------------------------------------------------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    |                         |
+    |                         this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:504:23
+    |
+504 |             out.push(r?);
+    |                      -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    |                      |
+    |                      this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:521:10
+    |
+516 |   ...   let mut stmt = conn.prepare(
+    |  ___________________________-
+517 | | ...       "SELECT m.id, m.session_id, m.role, m.content, m.tool_calls, m.tool_call_id, m.created_at, m.token...
+518 | | ...        FROM messages_fts JOIN messages m ON m.id = messages_fts.rowid \
+519 | | ...        WHERE messages_fts MATCH ?1 AND m.session_id = ?2 \
+520 | | ...        ORDER BY messages_fts.rank LIMIT ?3",
+521 | | ...   )?;
+    | |       -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    | |_______|
+    |         this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:522:92
+    |
+522 |         let rows = stmt.query_map(params![query, session_id, limit as i64], row_to_message)?;
+    |                         -------------------------------------------------------------------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    |                         |
+    |                         this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:525:23
+    |
+525 |             out.push(r?);
+    |                      -^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    |                      |
+    |                      this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:532:80
+    |
+532 |         let n = conn.execute("DELETE FROM sessions WHERE id = ?1", params![id])?;
+    |                      ----------------------------------------------------------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    |                      |
+    |                      this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:543:66
+    |
+543 |             conn.execute_batch("PRAGMA wal_checkpoint(TRUNCATE)")?;
+    |                  ------------------------------------------------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    |                  |
+    |                  this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:566:37
+    |
+566 |         std::fs::rename(&tmp, &dest)?;
+    |         ----------------------------^ the trait `std::convert::From<std::io::Error>` is not implemented for `SessionError`
+    |         |
+    |         this can't be annotated with `?` because it has type `Result<_, std::io::Error>`
+    |
+note: `SessionError` needs to implement `From<std::io::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `SessionError`
+   --> src\session\store.rs:575:85
+    |
+575 |         let res: String = conn.query_row("PRAGMA integrity_check", [], |r| r.get(0))?;
+    |                                -----------------------------------------------------^ the trait `std::convert::From<rusqlite::Error>` is not implemented for `SessionError`
+    |                                |
+    |                                this can't be annotated with `?` because it has type `Result<_, rusqlite::Error>`
+    |
+note: `SessionError` needs to implement `From<rusqlite::Error>`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `AppError`
+  --> src\skill\builtin\mod.rs:88:40
+   |
+87 | pub fn install_builtin_skills(skills_dir: &Path) -> AppResult<()> {
+   |                                                     ------------- expected `AppError` because of this
+88 |     std::fs::create_dir_all(skills_dir)?;
+   |     -----------------------------------^ the trait `std::convert::From<std::io::Error>` is not implemented for `AppError`
+   |     |
+   |     this can't be annotated with `?` because it has type `Result<_, std::io::Error>`
+   |
+note: `AppError` needs to implement `From<std::io::Error>`
+  --> src\types\error.rs:10:1
+   |
+10 | pub enum AppError {
+   | ^^^^^^^^^^^^^^^^^
+   = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `AppError`
+   --> src\skill\builtin\mod.rs:240:40
+    |
+226 | ) -> AppResult<()> {
+    |      ------------- expected `AppError` because of this
+...
+240 |     std::fs::create_dir_all(&skill_dir)?;
+    |     -----------------------------------^ the trait `std::convert::From<std::io::Error>` is not implemented for `AppError`
+    |     |
+    |     this can't be annotated with `?` because it has type `Result<_, std::io::Error>`
+    |
+note: `AppError` needs to implement `From<std::io::Error>`
+   --> src\types\error.rs:10:1
+    |
+ 10 | pub enum AppError {
+    | ^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `AppError`
+   --> src\skill\builtin\mod.rs:241:56
+    |
+226 | ) -> AppResult<()> {
+    |      ------------- expected `AppError` because of this
+...
+241 |     std::fs::create_dir_all(skill_dir.join("examples"))?;
+    |     ---------------------------------------------------^ the trait `std::convert::From<std::io::Error>` is not implemented for `AppError`
+    |     |
+    |     this can't be annotated with `?` because it has type `Result<_, std::io::Error>`
+    |
+note: `AppError` needs to implement `From<std::io::Error>`
+   --> src\types\error.rs:10:1
+    |
+ 10 | pub enum AppError {
+    | ^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `AppError`
+   --> src\skill\builtin\mod.rs:242:54
+    |
+226 | ) -> AppResult<()> {
+    |      ------------- expected `AppError` because of this
+...
+242 |     std::fs::create_dir_all(skill_dir.join("assets"))?;
+    |     -------------------------------------------------^ the trait `std::convert::From<std::io::Error>` is not implemented for `AppError`
+    |     |
+    |     this can't be annotated with `?` because it has type `Result<_, std::io::Error>`
+    |
+note: `AppError` needs to implement `From<std::io::Error>`
+   --> src\types\error.rs:10:1
+    |
+ 10 | pub enum AppError {
+    | ^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `AppError`
+   --> src\skill\builtin\mod.rs:245:37
+    |
+226 | ) -> AppResult<()> {
+    |      ------------- expected `AppError` because of this
+...
+245 |     std::fs::write(&yaml_path, yaml)?;
+    |     --------------------------------^ the trait `std::convert::From<std::io::Error>` is not implemented for `AppError`
+    |     |
+    |     this can't be annotated with `?` because it has type `Result<_, std::io::Error>`
+    |
+note: `AppError` needs to implement `From<std::io::Error>`
+   --> src\types\error.rs:10:1
+    |
+ 10 | pub enum AppError {
+    | ^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `AppError`
+   --> src\skill\builtin\mod.rs:246:56
+    |
+226 | ) -> AppResult<()> {
+    |      ------------- expected `AppError` because of this
+...
+246 |     std::fs::write(skill_dir.join("script.py"), script)?;
+    |     ---------------------------------------------------^ the trait `std::convert::From<std::io::Error>` is not implemented for `AppError`
+    |     |
+    |     this can't be annotated with `?` because it has type `Result<_, std::io::Error>`
+    |
+note: `AppError` needs to implement `From<std::io::Error>`
+   --> src\types\error.rs:10:1
+    |
+ 10 | pub enum AppError {
+    | ^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `AppError`
+   --> src\skill\builtin\mod.rs:247:76
+    |
+226 | ) -> AppResult<()> {
+    |      ------------- expected `AppError` because of this
+...
+247 |     std::fs::write(skill_dir.join("examples").join("01_basic.md"), example)?;
+    |     -----------------------------------------------------------------------^ the trait `std::convert::From<std::io::Error>` is not implemented for `AppError`
+    |     |
+    |     this can't be annotated with `?` because it has type `Result<_, std::io::Error>`
+    |
+note: `AppError` needs to implement `From<std::io::Error>`
+   --> src\types\error.rs:10:1
+    |
+ 10 | pub enum AppError {
+    | ^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `AppError`
+   --> src\skill\skill_template.rs:127:33
+    |
+123 | pub fn create_skill_template(dir: &Path, name: &str) -> AppResult<()> {
+    |                                                         ------------- expected `AppError` because of this
+...
+127 |     std::fs::create_dir_all(dir)?;
+    |     ----------------------------^ the trait `std::convert::From<std::io::Error>` is not implemented for `AppError`
+    |     |
+    |     this can't be annotated with `?` because it has type `Result<_, std::io::Error>`
+    |
+note: `AppError` needs to implement `From<std::io::Error>`
+   --> src\types\error.rs:10:1
+    |
+ 10 | pub enum AppError {
+    | ^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `AppError`
+   --> src\skill\skill_template.rs:128:50
+    |
+123 | pub fn create_skill_template(dir: &Path, name: &str) -> AppResult<()> {
+    |                                                         ------------- expected `AppError` because of this
+...
+128 |     std::fs::create_dir_all(dir.join("examples"))?;
+    |     ---------------------------------------------^ the trait `std::convert::From<std::io::Error>` is not implemented for `AppError`
+    |     |
+    |     this can't be annotated with `?` because it has type `Result<_, std::io::Error>`
+    |
+note: `AppError` needs to implement `From<std::io::Error>`
+   --> src\types\error.rs:10:1
+    |
+ 10 | pub enum AppError {
+    | ^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `AppError`
+   --> src\skill\skill_template.rs:129:48
+    |
+123 | pub fn create_skill_template(dir: &Path, name: &str) -> AppResult<()> {
+    |                                                         ------------- expected `AppError` because of this
+...
+129 |     std::fs::create_dir_all(dir.join("assets"))?;
+    |     -------------------------------------------^ the trait `std::convert::From<std::io::Error>` is not implemented for `AppError`
+    |     |
+    |     this can't be annotated with `?` because it has type `Result<_, std::io::Error>`
+    |
+note: `AppError` needs to implement `From<std::io::Error>`
+   --> src\types\error.rs:10:1
+    |
+ 10 | pub enum AppError {
+    | ^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `AppError`
+   --> src\skill\skill_template.rs:135:49
+    |
+123 | pub fn create_skill_template(dir: &Path, name: &str) -> AppResult<()> {
+    |                                                         ------------- expected `AppError` because of this
+...
+135 |     std::fs::write(dir.join("skill.yaml"), yaml)?;
+    |     --------------------------------------------^ the trait `std::convert::From<std::io::Error>` is not implemented for `AppError`
+    |     |
+    |     this can't be annotated with `?` because it has type `Result<_, std::io::Error>`
+    |
+note: `AppError` needs to implement `From<std::io::Error>`
+   --> src\types\error.rs:10:1
+    |
+ 10 | pub enum AppError {
+    | ^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `AppError`
+   --> src\skill\skill_template.rs:139:50
+    |
+123 | pub fn create_skill_template(dir: &Path, name: &str) -> AppResult<()> {
+    |                                                         ------------- expected `AppError` because of this
+...
+139 |     std::fs::write(dir.join("README.md"), readme)?;
+    |     ---------------------------------------------^ the trait `std::convert::From<std::io::Error>` is not implemented for `AppError`
+    |     |
+    |     this can't be annotated with `?` because it has type `Result<_, std::io::Error>`
+    |
+note: `AppError` needs to implement `From<std::io::Error>`
+   --> src\types\error.rs:10:1
+    |
+ 10 | pub enum AppError {
+    | ^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `AppError`
+   --> src\skill\skill_template.rs:142:61
+    |
+123 | pub fn create_skill_template(dir: &Path, name: &str) -> AppResult<()> {
+    |                                                         ------------- expected `AppError` because of this
+...
+142 |     std::fs::write(dir.join("script.py"), DEFAULT_SCRIPT_PY)?;
+    |     --------------------------------------------------------^ the trait `std::convert::From<std::io::Error>` is not implemented for `AppError`
+    |     |
+    |     this can't be annotated with `?` because it has type `Result<_, std::io::Error>`
+    |
+note: `AppError` needs to implement `From<std::io::Error>`
+   --> src\types\error.rs:10:1
+    |
+ 10 | pub enum AppError {
+    | ^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `AppError`
+   --> src\skill\skill_template.rs:145:78
+    |
+123 | pub fn create_skill_template(dir: &Path, name: &str) -> AppResult<()> {
+    |                                                         ------------- expected `AppError` because of this
+...
+145 |     std::fs::write(dir.join("examples").join("01_basic.md"), DEFAULT_EXAMPLE)?;
+    |     -------------------------------------------------------------------------^ the trait `std::convert::From<std::io::Error>` is not implemented for `AppError`
+    |     |
+    |     this can't be annotated with `?` because it has type `Result<_, std::io::Error>`
+    |
+note: `AppError` needs to implement `From<std::io::Error>`
+   --> src\types\error.rs:10:1
+    |
+ 10 | pub enum AppError {
+    | ^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0599]: `WorkflowError` doesn't implement `std::fmt::Display`
+   --> src\workflow\manifest.rs:140:23
+    |
+140 |             reason: e.to_string(),
+    |                       ^^^^^^^^^ method cannot be called on `WorkflowError` due to unsatisfied trait bounds
+    |
+   ::: src\types\error.rs:263:1
+    |
+263 | pub enum WorkflowError {
+    | ---------------------- method `to_string` not found for this enum because it doesn't satisfy `WorkflowError: ToString` or `WorkflowError: std::fmt::Display`
+    |
+    = note: the following trait bounds were not satisfied:
+            `WorkflowError: std::fmt::Display`
+            which is required by `WorkflowError: ToString`
+note: the trait `std::fmt::Display` must be implemented
+   --> /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\core\src\fmt\mod.rs:1187:0
+    = help: items from traits can only be used if the trait is implemented and in scope
+    = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+            candidate #1: `ToString`
+
+error[E0277]: `WorkflowError` doesn't implement `std::fmt::Display`
+   --> src\workflow\scanner.rs:110:70
+    |
+110 |                         "workflow scanner: skipping {} (parse error: {e})",
+    |                                                                      ^^^ `WorkflowError` cannot be formatted with the default formatter
+    |
+help: the trait `std::fmt::Display` is not implemented for `WorkflowError`
+   --> src\types\error.rs:263:1
+    |
+263 | pub enum WorkflowError {
+    | ^^^^^^^^^^^^^^^^^^^^^^
+    = note: in format strings you may be able to use `{:?}` (or {:#?} for pretty-print) instead
+
+error[E0277]: `?` couldn't convert the error to `WorkflowError`
+   --> src\workflow\store.rs:157:57
+    |
+157 |         std::fs::create_dir_all(self.steps_dir(&run_id))?;
+    |         ------------------------------------------------^ the trait `std::convert::From<std::io::Error>` is not implemented for `WorkflowError`
+    |         |
+    |         this can't be annotated with `?` because it has type `Result<_, std::io::Error>`
+    |
+note: `WorkflowError` needs to implement `From<std::io::Error>`
+   --> src\types\error.rs:263:1
+    |
+263 | pub enum WorkflowError {
+    | ^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `WorkflowError`
+   --> src\workflow\store.rs:175:36
+    |
+175 |         std::fs::write(&path, json)?;
+    |         ---------------------------^ the trait `std::convert::From<std::io::Error>` is not implemented for `WorkflowError`
+    |         |
+    |         this can't be annotated with `?` because it has type `Result<_, std::io::Error>`
+    |
+note: `WorkflowError` needs to implement `From<std::io::Error>`
+   --> src\types\error.rs:263:1
+    |
+263 | pub enum WorkflowError {
+    | ^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `WorkflowError`
+   --> src\workflow\store.rs:290:60
+    |
+290 |         for entry in std::fs::read_dir(&self.workflows_dir)? {
+    |                      --------------------------------------^ the trait `std::convert::From<std::io::Error>` is not implemented for `WorkflowError`
+    |                      |
+    |                      this can't be annotated with `?` because it has type `Result<_, std::io::Error>`
+    |
+note: `WorkflowError` needs to implement `From<std::io::Error>`
+   --> src\types\error.rs:263:1
+    |
+263 | pub enum WorkflowError {
+    | ^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `?` couldn't convert the error to `WorkflowError`
+   --> src\workflow\store.rs:291:30
+    |
+291 |             let entry = entry?;
+    |                         -----^ the trait `std::convert::From<std::io::Error>` is not implemented for `WorkflowError`
+    |                         |
+    |                         this can't be annotated with `?` because it has type `Result<_, std::io::Error>`
+    |
+note: `WorkflowError` needs to implement `From<std::io::Error>`
+   --> src\types\error.rs:263:1
+    |
+263 | pub enum WorkflowError {
+    | ^^^^^^^^^^^^^^^^^^^^^^
+    = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait
+
+error[E0277]: `SessionError` doesn't implement `std::fmt::Display`
+   --> src\package.rs:439:60
+    |
+439 | ...                   .push(format!("session {}: {e}", ex.session.id)),
+    |                                                  ^^^ `SessionError` cannot be formatted with the default formatter
+    |
+help: the trait `std::fmt::Display` is not implemented for `SessionError`
+   --> src\session\error.rs:10:1
+    |
+ 10 | pub enum SessionError {
+    | ^^^^^^^^^^^^^^^^^^^^^
+    = note: in format strings you may be able to use `{:?}` (or {:#?} for pretty-print) instead
+
+error[E0277]: `KnowledgeError` doesn't implement `std::fmt::Display`
+   --> src\package.rs:461:62
+    |
+461 | ...                   .push(format!("knowledge {}: {e}", ex.doc.name)),
+    |                                                    ^^^ `KnowledgeError` cannot be formatted with the default formatter
+    |
+help: the trait `std::fmt::Display` is not implemented for `KnowledgeError`
+   --> src\knowledge\error.rs:10:1
+    |
+ 10 | pub enum KnowledgeError {
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+    = note: in format strings you may be able to use `{:?}` (or {:#?} for pretty-print) instead
+
+Some errors have detailed explanations: E0277, E0432, E0433, E0599.
+For more information about an error, try `rustc --explain E0277`.
+error: could not compile `caspian-flow` (lib) due to 398 previous errors
