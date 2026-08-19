@@ -50,8 +50,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # --- Linux only: the webview system libraries Tauri v2 needs to build ---
-      - name: Install Linux build dependencies
+      # Linux only: the webview system libraries Tauri v2 needs to build ---
+      - name: Install Linux build deps
         if: matrix.platform == 'ubuntu-22.04'
         run: |
           sudo apt-get update
