@@ -1,7 +1,7 @@
-# P33 路 Cross-platform release pipeline (Windows / macOS / Linux)
+# P33 · Cross-platform release pipeline (Windows / macOS / Linux)
 #
 # Triggered by a `v*` tag push or manual dispatch. One job per OS runner builds
-# that runner's native target 鈥?the supported Tauri cross-platform strategy
+# that runner's native target — the supported Tauri cross-platform strategy
 # (avoids fragile cross-compilers). Each runner signs its artifact with the
 # platform-appropriate secrets, then tauri-action uploads the bundles to a
 # GitHub draft release.

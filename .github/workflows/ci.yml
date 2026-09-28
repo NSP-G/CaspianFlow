@@ -1,0 +1,61 @@
+# Headless CI gate — mirrors the local sandbox gate.
+#
+# Runs the same checks Keel runs in the sandbox so regressions are caught
+# before a release build: Rust tests (lib + integration + doctests, default
+# features, NO Tauri GUI — so no webkit2gtk needed) + frontend build /
+# typecheck / lint.
+#
+# Deliberately does NOT run `tauri build`: that needs the webview system
+# libraries and is covered by .github/workflows/release.yml on tagged pushes.
+#
+# Layout note: the app lives at the repository ROOT (not a monorepo
+# subdirectory), so there is no `working-directory` prefix here.
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  rust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy
+      - name: Rust cache
+        uses: swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+      - name: Run tests (lib + integration + doctests, no GUI)
+        run: cargo test --manifest-path src-tauri/Cargo.toml
+      - name: Clippy (lib + tests)
+        run: cargo clippy --lib --tests --manifest-path src-tauri/Cargo.toml -- -D warnings
+
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Build frontend
+        run: pnpm build
+      - name: Typecheck
+        run: pnpm typecheck
+      - name: Lint
+        run: pnpm lint
