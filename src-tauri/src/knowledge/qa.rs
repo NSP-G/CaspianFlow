@@ -467,11 +467,28 @@ mod tests {
         }
     }
 
+    /// A model id `parse_model` can never resolve, so the embedder fails at load
+    /// time regardless of whether the machine can reach the model CDN.
+    ///
+    /// The older version of `test_embed_all_no_model_errors` relied on the CDN
+    /// being unreachable; that is true in the offline dev sandbox but false on
+    /// GitHub Actions, where the model downloads fine and the test's `Err`
+    /// assertion fails. Pinning an unresolvable id makes the error path
+    /// deterministic (and still network-independent in the sandbox).
+    fn make_unloadable_embedding_config() -> EmbeddingConfig {
+        EmbeddingConfig {
+            model: "__caspianflow_no_such_model__".to_string(),
+            ..make_embedding_config()
+        }
+    }
+
     // P24: build a QA service wired to a real ModelRouter (over a ConfigManager
     // with the default sample models). The mock LLM provider uses the same name
     // as the config's default model ("deepseek-chat"), so `meta.engine` reflects
     // the router-resolved default when `ask` is called without a model pref.
-    async fn temp_qa() -> (
+    async fn temp_qa_with_embedding(
+        embedding_cfg: EmbeddingConfig,
+    ) -> (
         tempfile::TempDir,
         SqliteKnowledgeQA,
         Arc<MockLlmProvider>,
@@ -488,7 +505,7 @@ mod tests {
             MockLlmProvider::single("工作流引擎支持 DAG 拓扑排序 [1]。".to_string())
                 .with_name("deepseek-chat"),
         );
-        let embedder = Arc::new(EmbeddingService::new(make_embedding_config()));
+        let embedder = Arc::new(EmbeddingService::new(embedding_cfg));
         let cfg = Arc::new(
             crate::config::ConfigManager::init_with_paths(Some(dir.path()))
                 .await
@@ -500,6 +517,15 @@ mod tests {
         ));
         let qa = SqliteKnowledgeQA::new(store, provider.clone(), embedder, router.clone());
         (dir, qa, provider, router)
+    }
+
+    async fn temp_qa() -> (
+        tempfile::TempDir,
+        SqliteKnowledgeQA,
+        Arc<MockLlmProvider>,
+        Arc<ModelRouter>,
+    ) {
+        temp_qa_with_embedding(make_embedding_config()).await
     }
 
     const ZH_DOC: &str = "工作流引擎支持 DAG 拓扑排序，采用 petgraph 实现。\n\n缓存策略采用哈希键精确匹配，中间结果落盘复用。";
@@ -719,11 +745,13 @@ mod tests {
     }
 
     // `embed_all` without a loadable model surfaces a clean `Embedding` error
-    // (no panic). Model weights are unreachable in this sandbox (HF/Xet CDN
-    // blocked; see mod.rs test notes), so this verifies the error path.
+    // (no panic). The model id is deliberately unresolvable so this exercises the
+    // error path on any machine, online or offline (relying on an unreachable CDN
+    // made the test pass in the sandbox and fail on CI runners with network).
     #[tokio::test]
     async fn test_embed_all_no_model_errors() {
-        let (_dir, qa, _mock, _router) = temp_qa().await;
+        let (_dir, qa, _mock, _router) =
+            temp_qa_with_embedding(make_unloadable_embedding_config()).await;
         qa.import_document(Path::new("/docs/wf.md"), "wf.md", ZH_DOC)
             .unwrap();
         let result = qa.embed_all().await;
