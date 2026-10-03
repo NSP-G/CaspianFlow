@@ -54,6 +54,10 @@ jobs:
           grep -nE "^error(\[|:)|^warning: unused|panicked at|^---- .* stdout ----" cargo-test.log | head -40 | while IFS= read -r line; do
             echo "::error::$line"
           done
+          echo "::error::===== raw tail (last 60 lines) ====="
+          tail -n 60 cargo-test.log | while IFS= read -r line; do
+            echo "::error::$line"
+          done
       - name: Clippy (lib + tests)
         run: cargo clippy --lib --tests --manifest-path src-tauri/Cargo.toml -- -D warnings
 
