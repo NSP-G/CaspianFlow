@@ -385,9 +385,9 @@ mod tests {
     #[test]
     fn test_is_offline_mode_env_var() {
         // Set offline env var
-        std::env::set_var("FASTEMBED_OFFLINE", "1");
+        unsafe { std::env::set_var("FASTEMBED_OFFLINE", "1") }; // SAFETY: test-only env mutation, no concurrent readers of the environment.
         assert!(is_offline_mode());
-        std::env::remove_var("FASTEMBED_OFFLINE");
+        unsafe { std::env::remove_var("FASTEMBED_OFFLINE") }; // SAFETY: test-only env mutation, no concurrent readers of the environment.
         assert!(!is_offline_mode());
     }
 
