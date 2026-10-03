@@ -99,6 +99,13 @@ jobs:
               errs = [i for i, l in enumerate(lines) if re.match(r"^error(\[|:)", l)]
               if errs:
                   emit("first clippy error", lines[max(0, errs[0]-2):errs[0]+40])
+                  locs = []
+                  for i in errs:
+                      locs.append(lines[i].strip()[:100])
+                      for j in range(i+1, min(i+4, len(lines))):
+                          if lines[j].strip().startswith("-->"):
+                              locs.append("    " + lines[j].strip()[:100]); break
+                  emit("all error locations (%d)" % len(errs), locs[:80])
               else:
                   emit("raw tail", lines[-80:])
           except SystemExit:
