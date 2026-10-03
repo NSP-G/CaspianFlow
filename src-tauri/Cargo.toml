@@ -55,6 +55,12 @@ regex = "1.11"
 thiserror = "2"
 sha2 = "0.10"
 
+# Observability + error plumbing (used as fully-qualified  / ,
+# so a -only dependency scan misses them)
+tracing = "0.1"
+anyhow = "1"
+keyring = { version = "3", features = ["sync-secret-service"] }
+
 # Optional jemalloc allocator
 tikv-jemallocator = { version = "0.6", optional = true }
 
