@@ -224,7 +224,7 @@ app:
 
     #[tokio::test]
     async fn test_resolve_api_key_env_var() {
-        std::env::set_var("TEST_CF_MANAGER_KEY", "manager-secret");
+        unsafe { std::env::set_var("TEST_CF_MANAGER_KEY", "manager-secret") }; // SAFETY: test-only env mutation, no concurrent readers of the environment.
         let tmp = tempfile::tempdir().unwrap();
 
         let mut settings = Settings::default_with_samples();
@@ -245,7 +245,7 @@ app:
         let key = manager.resolve_api_key("deepseek-chat").unwrap();
         assert_eq!(key, Some("manager-secret".to_string()));
 
-        std::env::remove_var("TEST_CF_MANAGER_KEY");
+        unsafe { std::env::remove_var("TEST_CF_MANAGER_KEY") }; // SAFETY: test-only env mutation, no concurrent readers of the environment.
     }
 
     #[tokio::test]
