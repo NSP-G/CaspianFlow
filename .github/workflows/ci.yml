@@ -52,7 +52,7 @@ jobs:
               print("::error::===== " + tag + " =====")
               print("::error::" + text.replace("\n", "%0A")[:3500])
           try:
-              path = "cargo-test.log"
+              path = os.environ.get("LOG_FILE", "cargo-test.log")
               if not os.path.exists(path):
                   emit("no log", "cargo-test.log was not produced")
                   raise SystemExit(0)
@@ -75,7 +75,37 @@ jobs:
               emit("annotator crashed", traceback.format_exc())
           PY
       - name: Clippy (lib + tests)
-        run: cargo clippy --lib --tests --manifest-path src-tauri/Cargo.toml -- -D warnings
+        id: clippy
+        run: |
+          set -o pipefail
+          cargo clippy --lib --tests --manifest-path src-tauri/Cargo.toml -- -D warnings 2>&1 | tee clippy.log
+      - name: Surface clippy failures as annotations
+        if: always() && steps.clippy.outcome == 'failure'
+        env:
+          LOG_FILE: clippy.log
+        run: |
+          python3 - <<'PY'
+          import re, os, traceback
+          def emit(tag, text):
+              print("::error::===== " + tag + " =====")
+              print("::error::" + text.replace("\\n", "%0A")[:3500])
+          try:
+              path = os.environ.get("LOG_FILE", "cargo-test.log")
+              if not os.path.exists(path):
+                  emit("no log", path + " was not produced")
+                  raise SystemExit(0)
+              txt = re.sub(r"\\x1b\\[[0-9;]*m", "", open(path, encoding="utf-8", errors="replace").read())
+              lines = txt.splitlines()
+              errs = [i for i, l in enumerate(lines) if re.match(r"^error(\\[|:)", l)]
+              if errs:
+                  emit("first clippy error", "\\n".join(lines[max(0, errs[0]-2):errs[0]+40]))
+              else:
+                  emit("raw tail", "\\n".join(lines[-80:]))
+          except SystemExit:
+              raise
+          except Exception:
+              emit("annotator crashed", traceback.format_exc())
+          PY
 
   frontend:
     runs-on: ubuntu-latest
