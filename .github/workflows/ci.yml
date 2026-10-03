@@ -86,25 +86,25 @@ jobs:
         run: |
           python3 - <<'PY'
           import re, os, traceback
-          def emit(tag, text):
+          def emit(tag, lines):
               print("::error::===== " + tag + " =====")
-              print("::error::" + text.replace("\\n", "%0A")[:3500])
+              print("::error::" + "%0A".join(lines)[:3500])
           try:
-              path = os.environ.get("LOG_FILE", "cargo-test.log")
+              path = os.environ.get("LOG_FILE", "clippy.log")
               if not os.path.exists(path):
-                  emit("no log", path + " was not produced")
+                  emit("no log", [path + " was not produced"])
                   raise SystemExit(0)
-              txt = re.sub(r"\\x1b\\[[0-9;]*m", "", open(path, encoding="utf-8", errors="replace").read())
+              txt = re.sub(r"\x1b\[[0-9;]*m", "", open(path, encoding="utf-8", errors="replace").read())
               lines = txt.splitlines()
-              errs = [i for i, l in enumerate(lines) if re.match(r"^error(\\[|:)", l)]
+              errs = [i for i, l in enumerate(lines) if re.match(r"^error(\[|:)", l)]
               if errs:
-                  emit("first clippy error", "\\n".join(lines[max(0, errs[0]-2):errs[0]+40]))
+                  emit("first clippy error", lines[max(0, errs[0]-2):errs[0]+40])
               else:
-                  emit("raw tail", "\\n".join(lines[-80:]))
+                  emit("raw tail", lines[-80:])
           except SystemExit:
               raise
           except Exception:
-              emit("annotator crashed", traceback.format_exc())
+              emit("annotator crashed", traceback.format_exc().splitlines())
           PY
 
   frontend:
