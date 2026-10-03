@@ -33,7 +33,27 @@ jobs:
         with:
           workspaces: src-tauri
       - name: Run tests (lib + integration + doctests, no GUI)
-        run: cargo test --manifest-path src-tauri/Cargo.toml
+        id: rust_tests
+        run: |
+          set -o pipefail
+          cargo test --manifest-path src-tauri/Cargo.toml 2>&1 | tee cargo-test.log
+      # Surface the actual failure text as check annotations, so a red CI can be
+      # triaged from the PR "Files changed" / checks view without opening logs.
+      - name: Surface test failures as annotations
+        if: always() && steps.rust_tests.outcome == 'failure'
+        run: |
+          if [ ! -f cargo-test.log ]; then
+            echo "::error::cargo-test.log was not produced"
+            exit 0
+          fi
+          echo "::error::===== failing tests ====="
+          grep -E "^test .* \.\.\. FAILED|^failures:$|^test result: FAILED" cargo-test.log | head -30 | while IFS= read -r line; do
+            echo "::error::$line"
+          done
+          echo "::error::===== compiler / panic output ====="
+          grep -nE "^error(\[|:)|^warning: unused|panicked at|^---- .* stdout ----" cargo-test.log | head -40 | while IFS= read -r line; do
+            echo "::error::$line"
+          done
       - name: Clippy (lib + tests)
         run: cargo clippy --lib --tests --manifest-path src-tauri/Cargo.toml -- -D warnings
 
