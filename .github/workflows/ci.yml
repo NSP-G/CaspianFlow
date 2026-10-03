@@ -56,17 +56,26 @@ jobs:
           txt = re.sub(r"\x1b\[[0-9;]*m", "", raw)
           lines = txt.splitlines()
           # Emit the first compiler-error block (plus its notes) as ONE annotation.
-          idx = [i for i, l in enumerate(lines) if re.match(r"^(error|warning)(\[|:)", l)]
+          idx = [i for i, l in enumerate(lines) if re.match(r"^(error|warning)(\\[|:)", l)]
           if idx:
               s = max(0, idx[0] - 2)
               chunk = lines[s:s + 45]
               msg = "%0A".join(chunk)
               print("::error::===== first error block =====")
               print("::error::" + msg[:3500])
-          else:
-              print("::error::===== no compile error line; raw tail =====")
-              msg = "%0A".join(lines[-60:])
-              print("::error::" + msg[:3500])
+          # Test failures: emit the failing-test list + panic output.
+          fai = [i for i, l in enumerate(lines) if l.strip() == "failures:"]
+          if fai:
+              s = fai[-1]
+              print("::error::===== failing tests =====")
+              print("::error::" + "%0A".join(lines[s:s + 30])[:3500])
+          stdout_idx = [i for i, l in enumerate(lines) if re.match(r"^---- .* stdout ----$", l)]
+          for s in stdout_idx[:3]:
+              print("::error::===== panic output =====")
+              print("::error::" + "%0A".join(lines[s:s + 40])[:3500])
+          if not idx and not fai and not stdout_idx:
+              print("::error::===== raw tail =====")
+              print("::error::" + "%0A".join(lines[-60:])[:3500])
           PY
       - name: Clippy (lib + tests)
         run: cargo clippy --lib --tests --manifest-path src-tauri/Cargo.toml -- -D warnings
