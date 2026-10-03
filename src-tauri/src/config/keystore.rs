@@ -147,10 +147,10 @@ mod tests {
 
     #[test]
     fn test_resolve_env_var() {
-        env::set_var("TEST_CF_API_KEY", "test-secret-12345");
+        unsafe { env::set_var("TEST_CF_API_KEY", "test-secret-12345") }; // SAFETY: test-only env mutation, no concurrent readers of the environment.
         let result = resolve_api_key(Some("${TEST_CF_API_KEY}"), "test-model").unwrap();
         assert_eq!(result, KeySource::EnvVar("test-secret-12345".to_string()));
-        env::remove_var("TEST_CF_API_KEY");
+        unsafe { env::remove_var("TEST_CF_API_KEY") }; // SAFETY: test-only env mutation, no concurrent readers of the environment.
     }
 
     #[test]
@@ -185,10 +185,10 @@ mod tests {
 
     #[test]
     fn test_resolve_env_var_string() {
-        env::set_var("TEST_CF_KEY2", "secret-value");
+        unsafe { env::set_var("TEST_CF_KEY2", "secret-value") }; // SAFETY: test-only env mutation, no concurrent readers of the environment.
         let result = resolve_api_key_string(Some("${TEST_CF_KEY2}"), "test-model").unwrap();
         assert_eq!(result, Some("secret-value".to_string()));
-        env::remove_var("TEST_CF_KEY2");
+        unsafe { env::remove_var("TEST_CF_KEY2") }; // SAFETY: test-only env mutation, no concurrent readers of the environment.
     }
 
     #[test]
