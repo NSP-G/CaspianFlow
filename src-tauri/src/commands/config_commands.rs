@@ -114,7 +114,7 @@ mod tests {
 
     #[tokio::test]
     async fn test_check_api_key_with_env() {
-        std::env::set_var("TEST_CF_CMD_KEY", "test-cmd-key");
+        unsafe { std::env::set_var("TEST_CF_CMD_KEY", "test-cmd-key") }; // SAFETY: test-only env mutation, no concurrent readers of the environment.
         let tmp = tempfile::tempdir().unwrap();
 
         let config_dir = tmp.path().join("config");
@@ -129,7 +129,7 @@ mod tests {
         let has_key = check_api_key(&manager, "deepseek-chat").await.unwrap();
         assert!(has_key);
 
-        std::env::remove_var("TEST_CF_CMD_KEY");
+        unsafe { std::env::remove_var("TEST_CF_CMD_KEY") }; // SAFETY: test-only env mutation, no concurrent readers of the environment.
     }
 
     #[test]
